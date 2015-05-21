@@ -1,0 +1,182 @@
+/*
+	=@import
+	=@var
+	=@Font
+	=Common
+	=Index
+-------------------------------------------------- */
+.debug {
+	border: 1px solid red;
+}
+.debug2 {
+	border: 1px solid green;
+}
+.debugbg {
+	background-color: pink;
+}
+
+/* =@import
+-------------------------------------------------- */
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville");
+@icon-font-path: "../fonts/glyphicons/";
+
+/* =@Font
+-------------------------------------------------- */
+@libre: 'Libre Baskerville', serif;
+
+@font-face {
+  font-family: 'didot';
+  src:  url(../fonts/didot/didot.ttf) format('truetype'),
+        url(../fonts/didot/didot.eot) format('eot'),
+        url(../fonts/didot/didot.woff) format('woff');
+  font-weight: 100;
+}
+
+/* =@var
+-------------------------------------------------- */
+@white  : #FCF9F5;
+@orange : #D3A849;
+@gray   : #CCCCCC;
+
+@black: #171717;
+	@black-hover: #3A3A3A;
+	@black-click: #171717;
+@gold: #B8984B;
+	@gold-hover: #997b39;
+	@gold-click: #7C612A;
+
+/* =Common
+-------------------------------------------------- */
+body {
+	color       : @black;
+	font-family : @libre;
+	a {
+		color: @black;
+		&:hover {
+			color: @black-hover;
+		}
+		&:active {
+			color: @black-click;
+		}
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.didot {
+		font-family: 'didot';
+	}
+	.browsehappy {
+	  margin     : 0.2em 0;
+	  background : #ccc;
+	  color      : #000;
+	  padding    : 0.2em 0;
+	}
+	.absolute {
+		position: absolute;
+	}
+}
+
+/* =Index
+-------------------------------------------------- */
+
+body.home {
+	font-size: 26px;
+
+	.temp-gap {
+		height: 100px;
+		.debugbg();
+	}
+	.container {
+		width: 1280px;
+		background-color: white;
+		border: 12px solid @black;
+	  margin: 50px auto 0 auto;
+		h1 {
+			font-size: 70px;
+			margin-top: 40px;
+		}
+		.sub-title {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		.header-hr {
+			border-bottom: 1px solid @gray;
+			width: 1066px;
+			height: 1px;
+			margin-top: 30px;
+		}
+		.nav.home {
+			margin-top: 15px;
+			font-size: 16px;
+			max-width: 590px;
+			li {
+				width: auto;
+				// padding: 10px 20px;
+				&.active {
+					a {
+						border-bottom: 2px solid @black;
+					}
+				}
+				a {
+					padding: 10px 0px 0px 0px;
+					margin: 0px 30px;
+					font-size: 16px;
+					line-height: 26px;
+					border-bottom: 2px solid transparent;
+					&:hover {
+						background-color: transparent;
+						border-bottom: 2px solid @black;
+					}
+				}
+			}
+		}
+		.main-img-wrapper {
+			margin-top: 50px;
+			position: relative;
+			.img-wrapper {
+				max-width: 1000px;
+			}
+			.str-iam {
+				font-size: 20px;
+			}
+			.font-big {
+				font-size: 45px;
+				line-height: 60px;
+			}
+			.hr {
+				margin-top: 20px;
+				border-bottom: 2px solid @orange;
+				max-width: 90px;
+				position: relative;
+			}
+			.tip {
+				&.first {
+					margin-top: 20px;
+				}
+				font-size: 10px;
+				font-style: italic;
+				line-height: 18px;
+				a {
+					text-decoration: underline;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+			.description.left {
+				top: 200px;
+				left: 50px;
+			}
+			.description.right {
+				top: 25px;
+				right: 80px;
+				.hr {
+					left: 150px;
+				}
+			}
+		}
+
+	}
+}
+
