@@ -1,5 +1,8 @@
 /*
+- Table of content -
+	=Debug Class
 	=@import
+	=CSS Reset
 	=@var
 	=@Font
 	=Common
@@ -11,15 +14,30 @@
 .debug2 {
 	border: 1px solid green;
 }
+.debug3 {
+	border: 1px solid blue;
+}
 .debugbg {
 	background-color: pink;
+}
+.temp-gap {
+	height: 100px;
+	opacity: .5;
+	background-color: lightsalmon;
+	border-style:dashed;
 }
 
 /* =@import
 -------------------------------------------------- */
 @import "../bower_components/bootstrap/less/bootstrap.less";
-@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville");
+@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic");
 @icon-font-path: "../fonts/glyphicons/";
+
+/* =@CSS Reset
+-------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family : @libre, "baskerville";
+}
 
 /* =@Font
 -------------------------------------------------- */
@@ -48,32 +66,31 @@
 
 /* =Common
 -------------------------------------------------- */
+.font-didot {
+	font-family: 'didot';
+}
+.absolute {
+	position: absolute;
+}
+a {
+	color: @black;
+	&:hover {
+		color: @black-hover;
+	}
+	&:active, &:focus {
+		color: @black-click;
+	}
+}
 body {
 	color       : @black;
-	font-family : @libre;
-	a {
-		color: @black;
-		&:hover {
-			color: @black-hover;
-		}
-		&:active {
-			color: @black-click;
-		}
-	}
-	.bold {
-		font-weight: bold;
-	}
-	.didot {
-		font-family: 'didot';
-	}
+	background-color: @white;
+	font-family : @libre, "baskerville";
+	font-style: normal;
 	.browsehappy {
 	  margin     : 0.2em 0;
 	  background : #ccc;
 	  color      : #000;
 	  padding    : 0.2em 0;
-	}
-	.absolute {
-		position: absolute;
 	}
 }
 
@@ -82,101 +99,125 @@ body {
 
 body.home {
 	font-size: 26px;
-
-	.temp-gap {
-		height: 100px;
-		.debugbg();
-	}
-	.container {
-		width: 1280px;
-		background-color: white;
+	background-color: @white;
+	background-image: url("../images/background-home.jpg");
+	background-position: center -40px;
+	.container-fluid {
 		border: 12px solid @black;
-	  margin: 50px auto 0 auto;
-		h1 {
-			font-size: 70px;
-			margin-top: 40px;
-		}
-		.sub-title {
-			font-size: 16px;
-			line-height: 24px;
-		}
-		.header-hr {
-			border-bottom: 1px solid @gray;
-			width: 1066px;
-			height: 1px;
-			margin-top: 30px;
-		}
-		.nav.home {
-			margin-top: 15px;
-			font-size: 16px;
-			max-width: 590px;
-			li {
-				width: auto;
-				// padding: 10px 20px;
-				&.active {
+		.container {
+			h1 {
+				font-size: 70px;
+				margin-top: 40px;
+			}
+			.sub-title {
+				font-size: 16px;
+				&.second {
+					font-size: 12px;
+					margin-top: -5px;
+				}
+			}
+			.header-bar {
+				border-bottom: 1px solid @gray;
+				width: 1066px;
+				height: 1px;
+				margin-top: 35px;
+			}
+			ul.nav.home {
+				margin-top: 15px;
+				font-size: 14px;
+				max-width: 530px;
+				li {
+					width: auto;
+					&.active {
+						a {
+							border-bottom: 2px solid @black;
+							cursor: text;
+						}
+					}
 					a {
-						border-bottom: 2px solid @black;
-					}
-				}
-				a {
-					padding: 10px 0px 0px 0px;
-					margin: 0px 30px;
-					font-size: 16px;
-					line-height: 26px;
-					border-bottom: 2px solid transparent;
-					&:hover {
-						background-color: transparent;
-						border-bottom: 2px solid @black;
-					}
-				}
-			}
-		}
-		.main-img-wrapper {
-			margin-top: 50px;
-			position: relative;
-			.img-wrapper {
-				max-width: 1000px;
-			}
-			.str-iam {
-				font-size: 20px;
-			}
-			.font-big {
-				font-size: 45px;
-				line-height: 60px;
-			}
-			.hr {
-				margin-top: 20px;
-				border-bottom: 2px solid @orange;
-				max-width: 90px;
-				position: relative;
-			}
-			.tip {
-				&.first {
-					margin-top: 20px;
-				}
-				font-size: 10px;
-				font-style: italic;
-				line-height: 18px;
-				a {
-					text-decoration: underline;
-					&:hover {
-						text-decoration: none;
+						padding: 10px 0px 0px 0px;
+						margin: 0px 30px;
+						font-size: 13px;
+						line-height: 26px;
+						border-bottom: 2px solid transparent;
+						&:hover {
+							background-color: transparent;
+							border-bottom: 2px solid @black;
+							color: @black-hover;
+						}
+						&:active, &:focus {
+							background: transparent;
+							color: @black-click;
+						}
 					}
 				}
 			}
-			.description.left {
-				top: 200px;
-				left: 50px;
-			}
-			.description.right {
-				top: 25px;
-				right: 80px;
-				.hr {
-					left: 150px;
-				}
-			}
-		}
 
-	}
+			section.select-my-role {
+				margin-top: 50px;
+				position: relative;
+				.img-wrapper {
+					max-width: 1000px;
+				}
+				.str-iam {
+					font-size: 20px;
+				}
+				.font-big {
+					font-size: 45px;
+					line-height: 60px;
+				}
+				.text-bar {
+					margin-top: 10px;
+					border-bottom: 2px solid @orange;
+					max-width: 90px;
+					position: relative;
+				}
+				.tip {
+					&.first {
+						margin-top: 20px;
+					}
+					font-size: 10px;
+					line-height: 18px;
+					&.link {
+						margin-top: 10px;
+						a {
+							padding-bottom: 2px;
+							border-bottom: 1px solid @black;
+							&:hover {
+								border-bottom: 1px solid transparent;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+				.description.left {
+					top: 230px;
+					left: 45px;
+				}
+				.description.right {
+					top: 30px;
+					right: 60px;
+					.text-bar {
+						left: 150px;
+					}
+				}
+			}// !section.select-my-role
+
+			section.key-opinion-leaders {
+				div.title-bar {
+					width: 90px;
+					border-bottom: 3px solid @orange;
+					position: relative;
+					top: 35px;
+				}
+				h2 {
+					margin-left: 10px;
+				}
+			}
+
+
+		}// !.container
+	}// !.container-fluid
+
 }
 

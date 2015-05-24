@@ -1,6 +1,9 @@
-@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville");
+@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic");
 /*
+- Table of content -
+	=Debug Class
 	=@import
+	=CSS Reset
 	=@var
 	=@Font
 	=Common
@@ -12,8 +15,17 @@
 .debug2 {
   border: 1px solid green;
 }
+.debug3 {
+  border: 1px solid blue;
+}
 .debugbg {
   background-color: pink;
+}
+.temp-gap {
+  height: 100px;
+  opacity: .5;
+  background-color: lightsalmon;
+  border-style: dashed;
 }
 /* =@import
 -------------------------------------------------- */
@@ -5973,6 +5985,22 @@ td.visible-print {
     display: none !important;
   }
 }
+/* =@CSS Reset
+-------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Libre Baskerville', serif, "baskerville";
+}
 /* =@Font
 -------------------------------------------------- */
 @font-face {
@@ -5984,24 +6012,27 @@ td.visible-print {
 -------------------------------------------------- */
 /* =Common
 -------------------------------------------------- */
-body {
-  color: #171717;
-  font-family: 'Libre Baskerville', serif;
+.font-didot {
+  font-family: 'didot';
 }
-body a {
+.absolute {
+  position: absolute;
+}
+a {
   color: #171717;
 }
-body a:hover {
+a:hover {
   color: #3a3a3a;
 }
-body a:active {
+a:active,
+a:focus {
   color: #171717;
 }
-body .bold {
-  font-weight: bold;
-}
-body .didot {
-  font-family: 'didot';
+body {
+  color: #171717;
+  background-color: #fcf9f5;
+  font-family: 'Libre Baskerville', serif, "baskerville";
+  font-style: normal;
 }
 body .browsehappy {
   margin: 0.2em 0;
@@ -6009,103 +6040,119 @@ body .browsehappy {
   color: #000;
   padding: 0.2em 0;
 }
-body .absolute {
-  position: absolute;
-}
 /* =Index
 -------------------------------------------------- */
 body.home {
   font-size: 26px;
+  background-color: #fcf9f5;
+  background-image: url("../images/background-home.jpg");
+  background-position: center -40px;
 }
-body.home .temp-gap {
-  height: 100px;
-  background-color: pink;
-}
-body.home .container {
-  width: 1280px;
-  background-color: white;
+body.home .container-fluid {
   border: 12px solid #171717;
-  margin: 50px auto 0 auto;
 }
-body.home .container h1 {
+body.home .container-fluid .container h1 {
   font-size: 70px;
   margin-top: 40px;
 }
-body.home .container .sub-title {
+body.home .container-fluid .container .sub-title {
   font-size: 16px;
-  line-height: 24px;
 }
-body.home .container .header-hr {
+body.home .container-fluid .container .sub-title.second {
+  font-size: 12px;
+  margin-top: -5px;
+}
+body.home .container-fluid .container .header-bar {
   border-bottom: 1px solid #cccccc;
   width: 1066px;
   height: 1px;
-  margin-top: 30px;
+  margin-top: 35px;
 }
-body.home .container .nav.home {
+body.home .container-fluid .container ul.nav.home {
   margin-top: 15px;
-  font-size: 16px;
-  max-width: 590px;
+  font-size: 14px;
+  max-width: 530px;
 }
-body.home .container .nav.home li {
+body.home .container-fluid .container ul.nav.home li {
   width: auto;
 }
-body.home .container .nav.home li.active a {
+body.home .container-fluid .container ul.nav.home li.active a {
   border-bottom: 2px solid #171717;
+  cursor: text;
 }
-body.home .container .nav.home li a {
+body.home .container-fluid .container ul.nav.home li a {
   padding: 10px 0px 0px 0px;
   margin: 0px 30px;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 26px;
   border-bottom: 2px solid transparent;
 }
-body.home .container .nav.home li a:hover {
+body.home .container-fluid .container ul.nav.home li a:hover {
   background-color: transparent;
   border-bottom: 2px solid #171717;
+  color: #3a3a3a;
 }
-body.home .container .main-img-wrapper {
+body.home .container-fluid .container ul.nav.home li a:active,
+body.home .container-fluid .container ul.nav.home li a:focus {
+  background: transparent;
+  color: #171717;
+}
+body.home .container-fluid .container section.select-my-role {
   margin-top: 50px;
   position: relative;
 }
-body.home .container .main-img-wrapper .img-wrapper {
+body.home .container-fluid .container section.select-my-role .img-wrapper {
   max-width: 1000px;
 }
-body.home .container .main-img-wrapper .str-iam {
+body.home .container-fluid .container section.select-my-role .str-iam {
   font-size: 20px;
 }
-body.home .container .main-img-wrapper .font-big {
+body.home .container-fluid .container section.select-my-role .font-big {
   font-size: 45px;
   line-height: 60px;
 }
-body.home .container .main-img-wrapper .hr {
-  margin-top: 20px;
+body.home .container-fluid .container section.select-my-role .text-bar {
+  margin-top: 10px;
   border-bottom: 2px solid #d3a849;
   max-width: 90px;
   position: relative;
 }
-body.home .container .main-img-wrapper .tip {
+body.home .container-fluid .container section.select-my-role .tip {
   font-size: 10px;
-  font-style: italic;
   line-height: 18px;
 }
-body.home .container .main-img-wrapper .tip.first {
+body.home .container-fluid .container section.select-my-role .tip.first {
   margin-top: 20px;
 }
-body.home .container .main-img-wrapper .tip a {
-  text-decoration: underline;
+body.home .container-fluid .container section.select-my-role .tip.link {
+  margin-top: 10px;
 }
-body.home .container .main-img-wrapper .tip a:hover {
+body.home .container-fluid .container section.select-my-role .tip.link a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #171717;
+}
+body.home .container-fluid .container section.select-my-role .tip.link a:hover {
+  border-bottom: 1px solid transparent;
   text-decoration: none;
 }
-body.home .container .main-img-wrapper .description.left {
-  top: 200px;
-  left: 50px;
+body.home .container-fluid .container section.select-my-role .description.left {
+  top: 230px;
+  left: 45px;
 }
-body.home .container .main-img-wrapper .description.right {
-  top: 25px;
-  right: 80px;
+body.home .container-fluid .container section.select-my-role .description.right {
+  top: 30px;
+  right: 60px;
 }
-body.home .container .main-img-wrapper .description.right .hr {
+body.home .container-fluid .container section.select-my-role .description.right .text-bar {
   left: 150px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.title-bar {
+  width: 90px;
+  border-bottom: 3px solid #d3a849;
+  position: relative;
+  top: 35px;
+}
+body.home .container-fluid .container section.key-opinion-leaders h2 {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=/styles/main.css.map */
