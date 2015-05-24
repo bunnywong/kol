@@ -21,10 +21,10 @@
 	background-color: pink;
 }
 .temp-gap {
-	height: 100px;
+	height: 50px;
 	opacity: .5;
 	background-color: lightsalmon;
-	border-style:dashed;
+	.debug2();
 }
 
 /* =@import
@@ -72,6 +72,27 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .absolute {
 	position: absolute;
 }
+.no-gutter [class*="-10"] {
+	padding-left:0px;
+  padding-right:0px;
+}
+.font-brown {
+	color: @orange;
+}
+.img {
+	display: inline-block;
+}
+.img-stick {
+	background-image: url("../images/img-stick.png");
+	height: 50px;
+	width: 15px;
+	background-repeat: no-repeat;
+}
+.img-double-arrow-right {
+	background-image: url("../images/img-double-arrow-right.png");
+	width: 18px;
+	height: 18px;
+}
 a {
 	color: @black;
 	&:hover {
@@ -96,7 +117,6 @@ body {
 
 /* =Index
 -------------------------------------------------- */
-
 body.home {
 	font-size: 26px;
 	background-color: @white;
@@ -105,6 +125,7 @@ body.home {
 	.container-fluid {
 		border: 12px solid @black;
 		.container {
+			.debug();
 			h1 {
 				font-size: 70px;
 				margin-top: 40px;
@@ -157,7 +178,9 @@ body.home {
 				margin-top: 50px;
 				position: relative;
 				.img-wrapper {
-					max-width: 1000px;
+					img {
+						max-width: 100%;
+					}
 				}
 				.str-iam {
 					font-size: 20px;
@@ -190,13 +213,14 @@ body.home {
 						}
 					}
 				}
+				@base: -40px;
 				.description.left {
 					top: 230px;
-					left: 45px;
+					left: @base;
 				}
 				.description.right {
 					top: 30px;
-					right: 60px;
+					right: @base;
 					.text-bar {
 						left: 150px;
 					}
@@ -204,14 +228,68 @@ body.home {
 			}// !section.select-my-role
 
 			section.key-opinion-leaders {
+				@base: 40px;
+				margin-top: 110px;
 				div.title-bar {
 					width: 90px;
 					border-bottom: 3px solid @orange;
 					position: relative;
-					top: 35px;
+					top: 40px;
+					left: -@base;
 				}
 				h2 {
+					font-size: 40px;
 					margin-left: 10px;
+					position: relative;
+					left: -@base;
+				}
+				div.img-wrapper {
+					margin-top: 30px;
+					right: 40px;
+					position: relative;
+				}
+ 				div.content-wrapper {
+					top: 120px;
+					right: 50px;
+					width: 560px;
+					position: absolute;
+					h4.first {
+						margin-top: 40px;
+					}
+					ul.list {
+						font-size: 20px;
+						li {
+							margin-top: 15px;
+							div.number-wrapper {
+								width: 50px;
+								span.number {
+									font-size: 30px;
+									bottom: 15px;
+									position: relative;
+								}
+							}
+							.item {
+								max-width: 450px;
+							}
+							// For single line content
+							&:not(.first) {
+								.item {
+									top: 10px;
+									position: relative;
+								}
+							}
+						}
+					}
+					button {
+						font-size: 18px;
+						background-color: @black;
+						color: @white;
+						padding: 10px;
+						min-width: 220px;
+						min-height: 60px;
+						margin-top: 40px;
+						margin-right: 20px;
+					}
 				}
 			}
 

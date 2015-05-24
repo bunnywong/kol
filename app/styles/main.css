@@ -22,10 +22,10 @@
   background-color: pink;
 }
 .temp-gap {
-  height: 100px;
+  height: 50px;
   opacity: .5;
   background-color: lightsalmon;
-  border-style: dashed;
+  border: 1px solid green;
 }
 /* =@import
 -------------------------------------------------- */
@@ -6018,6 +6018,27 @@ h6,
 .absolute {
   position: absolute;
 }
+.no-gutter [class*="-10"] {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.font-brown {
+  color: #d3a849;
+}
+.img {
+  display: inline-block;
+}
+.img-stick {
+  background-image: url("../images/img-stick.png");
+  height: 50px;
+  width: 15px;
+  background-repeat: no-repeat;
+}
+.img-double-arrow-right {
+  background-image: url("../images/img-double-arrow-right.png");
+  width: 18px;
+  height: 18px;
+}
 a {
   color: #171717;
 }
@@ -6050,6 +6071,9 @@ body.home {
 }
 body.home .container-fluid {
   border: 12px solid #171717;
+}
+body.home .container-fluid .container {
+  border: 1px solid red;
 }
 body.home .container-fluid .container h1 {
   font-size: 70px;
@@ -6101,8 +6125,8 @@ body.home .container-fluid .container section.select-my-role {
   margin-top: 50px;
   position: relative;
 }
-body.home .container-fluid .container section.select-my-role .img-wrapper {
-  max-width: 1000px;
+body.home .container-fluid .container section.select-my-role .img-wrapper img {
+  max-width: 100%;
 }
 body.home .container-fluid .container section.select-my-role .str-iam {
   font-size: 20px;
@@ -6137,22 +6161,74 @@ body.home .container-fluid .container section.select-my-role .tip.link a:hover {
 }
 body.home .container-fluid .container section.select-my-role .description.left {
   top: 230px;
-  left: 45px;
+  left: -40px;
 }
 body.home .container-fluid .container section.select-my-role .description.right {
   top: 30px;
-  right: 60px;
+  right: -40px;
 }
 body.home .container-fluid .container section.select-my-role .description.right .text-bar {
   left: 150px;
+}
+body.home .container-fluid .container section.key-opinion-leaders {
+  margin-top: 110px;
 }
 body.home .container-fluid .container section.key-opinion-leaders div.title-bar {
   width: 90px;
   border-bottom: 3px solid #d3a849;
   position: relative;
-  top: 35px;
+  top: 40px;
+  left: -40px;
 }
 body.home .container-fluid .container section.key-opinion-leaders h2 {
+  font-size: 40px;
   margin-left: 10px;
+  position: relative;
+  left: -40px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.img-wrapper {
+  margin-top: 30px;
+  right: 40px;
+  position: relative;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper {
+  top: 120px;
+  right: 50px;
+  width: 560px;
+  position: absolute;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper h4.first {
+  margin-top: 40px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list {
+  font-size: 20px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li {
+  margin-top: 15px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li div.number-wrapper {
+  width: 50px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li div.number-wrapper span.number {
+  font-size: 30px;
+  bottom: 15px;
+  position: relative;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li .item {
+  max-width: 450px;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li:not(.first) .item {
+  top: 10px;
+  position: relative;
+}
+body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper button {
+  font-size: 18px;
+  background-color: #171717;
+  color: #fcf9f5;
+  padding: 10px;
+  min-width: 220px;
+  min-height: 60px;
+  margin-top: 40px;
+  margin-right: 20px;
 }
 /*# sourceMappingURL=/styles/main.css.map */
