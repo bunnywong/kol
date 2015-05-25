@@ -21,7 +21,10 @@
 .debugbg {
   background-color: pink;
 }
-.temp-gap {
+.temp-gap-wrapper {
+  margin-top: 50px;
+}
+.temp-gap-wrapper .temp-gap {
   height: 50px;
   opacity: .5;
   background-color: lightsalmon;
@@ -6012,8 +6015,17 @@ h6,
 -------------------------------------------------- */
 /* =Common
 -------------------------------------------------- */
+button:hover {
+  background-color: #3a3a3a !important;
+}
+button:focus {
+  outline: none;
+}
 .font-didot {
   font-family: 'didot';
+}
+.font-brown {
+  color: #d3a849;
 }
 .absolute {
   position: absolute;
@@ -6021,9 +6033,6 @@ h6,
 .no-gutter [class*="-10"] {
   padding-left: 0px;
   padding-right: 0px;
-}
-.font-brown {
-  color: #d3a849;
 }
 .img {
   display: inline-block;
@@ -6038,12 +6047,12 @@ h6,
   background-image: url("../images/img-double-arrow-right.png");
   width: 18px;
   height: 18px;
+  left: 3px;
+  top: 3px;
+  position: relative;
 }
 a {
   color: #171717;
-}
-a:hover {
-  color: #3a3a3a;
 }
 a:active,
 a:focus {
@@ -6072,9 +6081,6 @@ body.home {
 body.home .container-fluid {
   border: 12px solid #171717;
 }
-body.home .container-fluid .container {
-  border: 1px solid red;
-}
 body.home .container-fluid .container h1 {
   font-size: 70px;
   margin-top: 40px;
@@ -6086,11 +6092,13 @@ body.home .container-fluid .container .sub-title.second {
   font-size: 12px;
   margin-top: -5px;
 }
-body.home .container-fluid .container .header-bar {
-  border-bottom: 1px solid #cccccc;
+body.home .container-fluid .container .section-bar {
   width: 1066px;
   height: 1px;
+}
+body.home .container-fluid .container .section-bar.header {
   margin-top: 35px;
+  border-bottom: 1px solid #cccccc;
 }
 body.home .container-fluid .container ul.nav.home {
   margin-top: 15px;
@@ -6114,7 +6122,6 @@ body.home .container-fluid .container ul.nav.home li a {
 body.home .container-fluid .container ul.nav.home li a:hover {
   background-color: transparent;
   border-bottom: 2px solid #171717;
-  color: #3a3a3a;
 }
 body.home .container-fluid .container ul.nav.home li a:active,
 body.home .container-fluid .container ul.nav.home li a:focus {
@@ -6170,65 +6177,119 @@ body.home .container-fluid .container section.select-my-role .description.right 
 body.home .container-fluid .container section.select-my-role .description.right .text-bar {
   left: 150px;
 }
-body.home .container-fluid .container section.key-opinion-leaders {
+body.home .container-fluid .container section.content {
   margin-top: 110px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.title-bar {
+body.home .container-fluid .container section.content div.title-bar {
   width: 90px;
   border-bottom: 3px solid #d3a849;
   position: relative;
   top: 40px;
   left: -40px;
 }
-body.home .container-fluid .container section.key-opinion-leaders h2 {
+body.home .container-fluid .container section.content h2 {
   font-size: 40px;
   margin-left: 10px;
   position: relative;
   left: -40px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.img-wrapper {
+body.home .container-fluid .container section.content div.img-wrapper {
   margin-top: 30px;
   right: 40px;
   position: relative;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper {
-  top: 120px;
-  right: 50px;
-  width: 560px;
+body.home .container-fluid .container section.content div.content-wrapper {
   position: absolute;
+  width: 550px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper h4.first {
+body.home .container-fluid .container section.content div.content-wrapper.right {
+  top: 120px;
+  right: 60px;
+}
+body.home .container-fluid .container section.content div.content-wrapper h4.first {
   margin-top: 40px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list {
+body.home .container-fluid .container section.content div.content-wrapper ul.list {
   font-size: 20px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li {
+body.home .container-fluid .container section.content div.content-wrapper ul.list li {
   margin-top: 15px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li div.number-wrapper {
+body.home .container-fluid .container section.content div.content-wrapper ul.list li div.number-wrapper {
   width: 50px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li div.number-wrapper span.number {
+body.home .container-fluid .container section.content div.content-wrapper ul.list li div.number-wrapper span.number {
   font-size: 30px;
   bottom: 15px;
   position: relative;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li .item {
+body.home .container-fluid .container section.content div.content-wrapper ul.list li .item {
   max-width: 450px;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper ul.list li:not(.first) .item {
+body.home .container-fluid .container section.content div.content-wrapper ul.list li:not(.lines) .item {
   top: 10px;
   position: relative;
 }
-body.home .container-fluid .container section.key-opinion-leaders div.content-wrapper button {
+body.home .container-fluid .container section.content div.content-wrapper button {
   font-size: 18px;
   background-color: #171717;
   color: #fcf9f5;
   padding: 10px;
   min-width: 220px;
   min-height: 60px;
+}
+body.home .container-fluid .container section.content div.content-wrapper button.right {
   margin-top: 40px;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+body.home .container-fluid .container section.content.advertisers div.img-wrapper {
+  margin-top: -50px;
+}
+body.home .container-fluid .container section.content.advertisers div.content-wrapper.left {
+  top: 35px;
+  left: 10px;
+}
+body.home .container-fluid .container section.content.advertisers button.left {
+  margin-top: 55px;
+  left: -40px;
+  position: relative;
+}
+body.home .container-fluid footer {
+  margin-bottom: 50px;
+}
+body.home .container-fluid footer .section-bar.footer {
+  margin-top: 85px;
+  border-bottom: 1px solid #d3a849;
+}
+body.home .container-fluid footer .content {
+  font-size: 13px;
+  line-height: 23px;
+  margin-top: 50px;
+  padding: 0px 60px;
+}
+body.home .container-fluid footer .social {
+  margin: 10px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url("../images/split-social-media.png");
+}
+body.home .container-fluid footer .social.facebook {
+  background-position-x: 0px;
+}
+body.home .container-fluid footer .social.instagram {
+  background-position-x: -53px;
+}
+body.home .container-fluid footer .social.youtube {
+  background-position-x: 230px;
+}
+body.home .container-fluid footer .social.pintest {
+  background-position-x: 165px;
+}
+body.home .container-fluid footer .social.twitter {
+  background-position-x: 100px;
+}
+body.home .container-fluid footer .social.blogger {
+  background-position-x: 32px;
 }
 /*# sourceMappingURL=/styles/main.css.map */
