@@ -7,6 +7,7 @@
 	=@Font
 	=Common
 	=Index
+	=KOL
 -------------------------------------------------- */
 .debug {
 	border: 1px solid red;
@@ -53,6 +54,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         url(../fonts/didot/didot.woff) format('woff');
   font-weight: 100;
 }
+@font-face {
+  font-family: 'caslon';
+  src:  url(../fonts/caslon/Caslon224ITCbyBT-BoldItalic.ttf) format('truetype');
+  font-weight: 400;
+}
 
 /* =@var
 -------------------------------------------------- */
@@ -69,6 +75,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /* =Common
 -------------------------------------------------- */
+button {
+	font-size: 18px;
+	color: @white;
+	background-color: @black;
+}
 button:hover {
 	background-color: @black-hover!important;
 }
@@ -77,6 +88,9 @@ button:focus {
 }
 .font-didot {
 	font-family: 'didot';
+}
+.font-caslon {
+	font-family: 'caslon';
 }
 
 .font-brown {
@@ -107,6 +121,14 @@ button:focus {
 	top: @base;
 	position: relative;
 }
+.img-love {
+	background-image: url("../images/img-love.png");
+	width: 30px;
+	height: 30px;
+	top: 7px;
+	margin-left: 5px;
+	position: relative;
+}
 a {
 	color: @black;
 	&:hover {
@@ -117,26 +139,63 @@ a {
 }
 body {
 	color       : @black;
+	font-size: 26px;
 	background-color: @white;
 	font-family : @libre, "baskerville";
 	font-style: normal;
+	border: 12px solid @black;
 	.browsehappy {
 	  margin     : 0.2em 0;
 	  background : #ccc;
 	  color      : #000;
 	  padding    : 0.2em 0;
 	}
+	footer {
+		margin-bottom: 50px;
+		.section-bar.footer {
+			margin-top: 85px;
+			border-bottom: 1px solid @orange;
+		}
+		.content {
+			font-size: 13px;
+			line-height: 23px;
+			margin-top: 50px;
+			padding: 0px 60px;
+		}
+		.social {
+			margin: 10px;
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			background-image: url("../images/split-social-media.png");
+			&.facebook {
+				background-position-x: 0px;
+			}
+			&.instagram {
+				background-position-x: -53px;
+			}
+			&.youtube {
+				background-position-x: 230px;
+			}
+			&.pintest {
+				background-position-x: 165px;
+			}
+			&.twitter {
+				background-position-x: 100px;
+			}
+			&.blogger {
+				background-position-x: 32px;
+			}
+		}
+	}
 }
 
 /* =Index
 -------------------------------------------------- */
 body.home {
-	font-size: 26px;
-	background-color: @white;
 	background-image: url("../images/background-home.jpg");
 	background-position: center -40px;
 	.container-fluid {
-		border: 12px solid @black;
 		.container {
 			h1 {
 				font-size: 70px;
@@ -150,7 +209,7 @@ body.home {
 				}
 			}
 			.section-bar {
-				width: 1066px;
+				width: 1070px;
 				height: 1px;
 				&.header {
 					margin-top: 35px;
@@ -221,7 +280,7 @@ body.home {
 							border-bottom: 1px solid @black;
 							&:hover {
 								border-bottom: 1px solid transparent;
-								text-decoration: none;
+								// text-decoration: none;
 							}
 						}
 					}
@@ -297,9 +356,6 @@ body.home {
 						}
 					}
 					button {
-						font-size: 18px;
-						background-color: @black;
-						color: @white;
 						padding: 10px;
 						min-width: 220px;
 						min-height: 60px;
@@ -327,45 +383,124 @@ body.home {
 			}
 
 		}// !.container
-		footer {
-			margin-bottom: 50px;
-			.section-bar.footer {
-				margin-top: 85px;
-				border-bottom: 1px solid @orange;
+	}// !.container-fluid
+}
+
+/* =KOL
+-------------------------------------------------- */
+
+body.kol {
+	background-image: url("../images/background-kol.jpg");
+	background-position: center -40px;
+	nav {
+		background-color: @black;
+		color: @white;
+		font-size: 14px;
+		padding-bottom: 10px;
+		.navbar-brand {
+			font-size: 25px;
+			top: 5px;
+			left: 0px;
+			position: absolute;
+			&, &:hover {
+				color: @white;
 			}
-			.content {
-				font-size: 13px;
-				line-height: 23px;
-				margin-top: 50px;
-				padding: 0px 60px;
-			}
-			.social {
-				margin: 10px;
-				display: inline-block;
-				width: 35px;
-				height: 35px;
-				background-image: url("../images/split-social-media.png");
-				&.facebook {
-					background-position-x: 0px;
+		}
+		ul.stick.nav {
+			float: none;
+			width: 500px;
+			li {
+				margin: 0px 10px;
+				a {
+					color: @white!important;
+					span {
+						padding-bottom: 3px;
+						border-bottom: 2px solid transparent;
+					}
 				}
-				&.instagram {
-					background-position-x: -53px;
+				&.active {
+					a {
+						background-color: transparent;
+						span {
+							border-bottom: 2px solid @white;
+						}
+					}
 				}
-				&.youtube {
-					background-position-x: 230px;
-				}
-				&.pintest {
-					background-position-x: 165px;
-				}
-				&.twitter {
-					background-position-x: 100px;
-				}
-				&.blogger {
-					background-position-x: 32px;
+				a:hover {
+					color: @white!important;
+					span {
+						border-bottom: 2px solid @white;
+					}
 				}
 			}
 		}
-	}// !.container-fluid
+	}
+	h2 {
+		font-size: 54px;
+		margin-top: 110px;
+	}
+	section.key-opinion-leaders {
+		.text-bar {
+			height: 1px;
+			width: 90px;
+			border-bottom: 1px solid @gray;
+			margin-top: 30px;
+		}
+		div.content {
+			&.first {
+				margin-top: 30px;
+			}
+			font-size: 15px;
+			line-height: 25px;
+		}
+		button {
+			margin-top: 30px;
+			padding: 10px 40px 15px 40px;
+		}
+		.img-wrapper {
+			margin-top: 155px;
+		}
+	}
 
+	section.step-1 {
+		.section-bar {
+			margin-top: 130px;
+			width: 1070px;
+			height: 1px;
+			border-bottom: 3px solid @orange;
+		}
+		h2 {
+			max-width: 300px;
+			margin-left: 35px;
+			margin-top: 65px;
+		}
+		.img-wrapper {
+			margin-top: -50px;
+			position: relative;
+		}
+		.content-wrapper {
+			margin-top: 100px;
+			margin-left: 40px;
+			width: 290px;
+			h3 {
+				font-size: 38px;
+			}
+			.font-big {
+				margin-top: -10px;
+				font-size: 24px;
+			}
+			.text-bar {
+				height: 1px;
+				width: 40px;
+				margin-top: 30px;
+				border-bottom: 1px solid @gray;
+			}
+			.content {
+				font-size: 17px;
+				line-height: 28px;
+				margin-top: 20px;
+			}
+		}
+
+	}
 }
-
