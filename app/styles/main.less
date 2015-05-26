@@ -153,7 +153,6 @@ body {
 	footer {
 		margin-bottom: 50px;
 		.section-bar.footer {
-			margin-top: 85px;
 			border-bottom: 1px solid @orange;
 		}
 		.content {
@@ -195,6 +194,9 @@ body {
 body.home {
 	background-image: url("../images/background-home.jpg");
 	background-position: center -40px;
+	section.last {
+		margin-bottom: 85px;
+	}
 	.container-fluid {
 		.container {
 			h1 {
@@ -388,10 +390,16 @@ body.home {
 
 /* =KOL
 -------------------------------------------------- */
-
 body.kol {
 	background-image: url("../images/background-kol.jpg");
 	background-position: center -40px;
+	section.last {
+		margin-bottom: 65px;
+	}
+	button {
+		margin-top: 30px;
+		padding: 10px 40px 15px 40px;
+	}
 	nav {
 		background-color: @black;
 		color: @white;
@@ -454,10 +462,6 @@ body.kol {
 			font-size: 15px;
 			line-height: 25px;
 		}
-		button {
-			margin-top: 30px;
-			padding: 10px 40px 15px 40px;
-		}
 		.img-wrapper {
 			margin-top: 155px;
 		}
@@ -480,7 +484,7 @@ body.kol {
 			position: relative;
 		}
 		.content-wrapper {
-			margin-top: 100px;
+			margin-top: 120px;
 			margin-left: 40px;
 			width: 290px;
 			h3 {
@@ -491,17 +495,46 @@ body.kol {
 				font-size: 24px;
 			}
 			.text-bar {
-				height: 1px;
-				width: 40px;
-				margin-top: 30px;
-				border-bottom: 1px solid @gray;
+				span {
+					height: 1px;
+					width: 40px;
+					margin-top: 30px;
+					border-bottom: 1px solid @gray;
+					display: inline-block;
+				}
 			}
 			.content {
 				font-size: 17px;
 				line-height: 28px;
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 		}
 
+	}
+	section.step-2 {
+		.content-wrapper {
+			margin-left: 10px;
+			margin-top: 85px;
+			width: 230px;
+		}
+		.img-wrapper {
+			margin-top: -20px;
+			left: 20px;
+			position: relative;
+		}
+	}
+	section.step-3 {
+		.content-wrapper {
+			margin-top: 250px;
+			margin-left: 70px;
+		}
+		.img-wrapper {
+			margin-top: 90px;
+			right: 50px;
+			position: relative;
+		}
+	}
+	button.last {
+		margin-top: 85px;
 	}
 }
