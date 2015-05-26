@@ -150,6 +150,50 @@ body {
 	  color      : #000;
 	  padding    : 0.2em 0;
 	}
+	nav.stick {
+		background-color: @black;
+		color: @white;
+		font-size: 14px;
+		padding-bottom: 10px;
+		border: 0px;
+		.navbar-brand {
+			font-size: 25px;
+			top: 5px;
+			left: 0px;
+			position: absolute;
+			&, &:hover {
+				color: @white;
+			}
+		}
+		ul.nav {
+			float: none;
+			width: 500px;
+			li {
+				margin: 0px 10px;
+				a {
+					color: @white!important;
+					span {
+						padding-bottom: 3px;
+						border-bottom: 2px solid transparent;
+					}
+				}
+				&.active {
+					a {
+						background-color: transparent;
+						span {
+							border-bottom: 2px solid @white;
+						}
+					}
+				}
+				a:hover {
+					color: @white!important;
+					span {
+						border-bottom: 2px solid @white;
+					}
+				}
+			}
+		}
+	}
 	footer {
 		margin-bottom: 50px;
 		.section-bar.footer {
@@ -281,8 +325,7 @@ body.home {
 							padding-bottom: 2px;
 							border-bottom: 1px solid @black;
 							&:hover {
-								border-bottom: 1px solid transparent;
-								// text-decoration: none;
+								text-decoration: none;
 							}
 						}
 					}
@@ -400,50 +443,6 @@ body.kol {
 		margin-top: 30px;
 		padding: 10px 40px 15px 40px;
 	}
-	nav {
-		background-color: @black;
-		color: @white;
-		font-size: 14px;
-		padding-bottom: 10px;
-		border: 0px;
-		.navbar-brand {
-			font-size: 25px;
-			top: 5px;
-			left: 0px;
-			position: absolute;
-			&, &:hover {
-				color: @white;
-			}
-		}
-		ul.stick.nav {
-			float: none;
-			width: 500px;
-			li {
-				margin: 0px 10px;
-				a {
-					color: @white!important;
-					span {
-						padding-bottom: 3px;
-						border-bottom: 2px solid transparent;
-					}
-				}
-				&.active {
-					a {
-						background-color: transparent;
-						span {
-							border-bottom: 2px solid @white;
-						}
-					}
-				}
-				a:hover {
-					color: @white!important;
-					span {
-						border-bottom: 2px solid @white;
-					}
-				}
-			}
-		}
-	}
 	h2 {
 		font-size: 54px;
 		margin-top: 110px;
@@ -514,11 +513,11 @@ body.kol {
 	section.step-2 {
 		.content-wrapper {
 			margin-left: 10px;
-			margin-top: 85px;
+			margin-top: 220px;
 			width: 230px;
 		}
 		.img-wrapper {
-			margin-top: -20px;
+			margin-top: 115px;
 			left: 20px;
 			position: relative;
 		}
