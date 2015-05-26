@@ -7,7 +7,7 @@
 	=@Font
 	=Common
 	=Index
-	=KOL
+	=KOL & Advertiser
 -------------------------------------------------- */
 .debug {
 	border: 1px solid red;
@@ -187,6 +187,7 @@ body {
 				}
 				a:hover {
 					color: @white!important;
+					background-color: transparent!important;
 					span {
 						border-bottom: 2px solid @white;
 					}
@@ -235,7 +236,7 @@ body {
 
 /* =Index
 -------------------------------------------------- */
-body.home {
+body.home {// PerfectPixel: 120 / -10
 	background-image: url("../images/background-home.jpg");
 	background-position: center -40px;
 	section.last {
@@ -431,23 +432,33 @@ body.home {
 	}// !.container-fluid
 }
 
-/* =KOL
+/* =KOL & Advertiser
 -------------------------------------------------- */
-body.kol {
-	background-image: url("../images/background-kol.jpg");
-	background-position: center -40px;
-	section.last {
-		margin-bottom: 65px;
+body.tutorial {
+	border-top: 0px;
+	&.kol {
+		background-image: url("../images/background-kol.jpg");
+		background-position: center -60px;
+		section.last {
+			margin-bottom: 65px;
+		}
+	}
+	&.advertisers { // User [s] name as here only
+		background-image: url("../images/background-advertiser.jpg");
+		background-position: center -40px;
+		section.last {
+			margin-bottom: 65px;
+		}
 	}
 	button {
 		margin-top: 30px;
-		padding: 10px 40px 15px 40px;
+		padding: 10px 30px 15px 30px;
 	}
 	h2 {
 		font-size: 54px;
 		margin-top: 110px;
 	}
-	section.key-opinion-leaders {
+	section.main-content {
 		.text-bar {
 			height: 1px;
 			width: 90px;
@@ -484,7 +495,7 @@ body.kol {
 		}
 		.content-wrapper {
 			margin-top: 120px;
-			margin-left: 40px;
+			margin-left: 55px;
 			width: 290px;
 			h3 {
 				font-size: 38px;
@@ -513,27 +524,82 @@ body.kol {
 	section.step-2 {
 		.content-wrapper {
 			margin-left: 10px;
-			margin-top: 220px;
+			margin-top: 210px;
 			width: 230px;
 		}
 		.img-wrapper {
 			margin-top: 115px;
-			left: 20px;
+			margin-left: 30px;
 			position: relative;
 		}
 	}
 	section.step-3 {
 		.content-wrapper {
-			margin-top: 250px;
+			margin-top: 260px;
 			margin-left: 70px;
 		}
 		.img-wrapper {
-			margin-top: 90px;
-			right: 50px;
-			position: relative;
+			margin-top: 105px;
+			margin-left: 50px;
 		}
 	}
 	button.last {
-		margin-top: 85px;
+		margin-top: 80px;
+	}
+}
+body.advertisers { // PerfectPixel: 120 / 0
+	section {
+		ul {
+			margin-left: 5px;
+			list-style:none;
+			padding-left: 0px;
+			li {
+				margin-top: 10px;
+				font-size: 17px;
+				padding-left: 40px;
+				background: url("../images/img-bullet.png") no-repeat 10px 5px;
+				line-height: 30px;
+			}
+		}
+	}
+	section.main-content {
+		h2 {
+			margin-top: 170px;
+		}
+		.img-wrapper {
+			margin-top: 85px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 20px 110px 20px 110px;
+		}
+	}
+
+	section.step-1 {
+		.section-bar {
+			margin-top: 125px;
+		}
+		.content-wrapper {
+			margin-top: 130px;
+			margin-left: 30px;
+			width: 350px;
+		}
+		.img-wrapper {
+			margin-top: 50px;
+			margin-left: 10px;
+		}
+	}
+	section.step-2 {
+		.font-big {
+			width: 400px;
+		}
+		.img-wrapper {
+			margin-top: 100px;
+			margin-left: 90px;
+		}
+		.content-wrapper {
+			margin-top: 140px;
+			margin-left: 45px;
+		}
 	}
 }
