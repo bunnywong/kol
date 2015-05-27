@@ -206,31 +206,38 @@ body {
 			margin-top: 50px;
 			padding: 0px 60px;
 		}
-		.social {
-			margin: 10px;
-			display: inline-block;
-			width: 35px;
-			height: 35px;
-			background-image: url("../images/split-social-media.png");
-			&.facebook {
-				background-position-x: 0px;
-			}
-			&.instagram {
-				background-position-x: -53px;
-			}
-			&.youtube {
-				background-position-x: 230px;
-			}
-			&.pintest {
-				background-position-x: 165px;
-			}
-			&.twitter {
-				background-position-x: 100px;
-			}
-			&.blogger {
-				background-position-x: 32px;
+		a {
+			.social {
+				margin: 10px;
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				// background-image: url("../images/split-social-media.png");
+				.social-position-x(@base) {
+					background: url("../images/split-social-media.png") no-repeat @base 0px ;
+				}
+				&.facebook {
+					.social-position-x(0px);
+				}
+				&.instagram {
+					.social-position-x(-53px);
+				}
+				&.youtube {
+					.social-position-x(-120px);
+				}
+				&.pintest {
+					.social-position-x(-185px);
+				}
+				&.twitter {
+					.social-position-x(-250px);
+				}
+				&.blogger {
+					background-position-x: 32px;
+					.social-position-x(-317px);
+				}
 			}
 		}
+
 	}
 }
 
