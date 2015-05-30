@@ -10,7 +10,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css"/>
+
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -46,9 +53,216 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="container">
-Sign up now
+      <div class="container my-container">
 
+        <section class="header text-center">
+          <h1 class="font-didot">KOL PROFILE</h1>
+          <div class="sub-title"><em>Take this quiz to create your KOL listing.</em></div>
+          <hr class="header-bar">
+        </section>
+
+        <section class="tab-container">
+          <div role="tabpanel" >
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs text-center" role="tablist">
+              <li role="presentation center-block" class="active">
+                <a href="#step-1" aria-controls="home" role="tab" data-toggle="tab">
+                  <div class="ball">
+                    <span>1</span>
+                  </div>
+                  <div class="title font-brown"><em>General Information</em></div>
+                </a>
+              </li>
+
+              <li role="presentation center-block">
+                <a href="#step-2" aria-controls="step-2" role="tab" data-toggle="tab" class="disable">
+                  <div class="ball ">
+                    <span>2</span>
+                    <hr class="step-2-bar step-bar absolute">
+                  </div>
+                  <div class="title font-brown"><em>Behavioral Information</em></div>
+                </a>
+              </li>
+
+              <li role="presentation center-block">
+                <a href="#step-3" aria-controls="step-3" role="tab" data-toggle="tab" class="disable">
+                  <div class="ball">
+                    <span>3</span>
+                    <hr class="step-3-bar step-bar absolute">
+                  </div>
+                  <div class="title font-brown"><em>Contact Details</em></div>
+                </a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active js-step-1" id="step-1">
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>1 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>What is your name? (We will only show your first name on your profile page)</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <input name="first-name" type="text" class="big" placeholder="First name">
+                        <input name="last-name" type="text" class="big" placeholder="Last name">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div>
+                        <span class="number font-brown"><strong>2 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your age?</em></span>
+                      </div>
+
+                      <div>
+                        <input name="age" type="number" class="big" placeholder="Age">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div>
+                        <span class="number font-brown"><strong>3 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your gender?</em></span>
+                      </div>
+
+                      <div>
+                        <select name="gender" class="selectpicker big">
+                          <option value="">Gender</option>
+                          <option value="M">Male</option>
+                          <option value="F">Female</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>4 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Where do you live?</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <div class="input-wrapper-inner">
+                          <select name="counmry" class="selectpicker small">
+                            <option value="">Country</option>
+                            <option value="usa">China</option>
+                            <option value="malaysia">Malaysia</option>
+                          </select>
+                        </div>
+
+                        <div class="input-wrapper-inner">
+                          <select name="city" class="selectpicker small">
+                            <option value="">City</option>
+                            <option value="Hong Kong">HK</option>
+                          </select>
+                        </div>
+
+                        <div class="input-wrapper-inner">
+                          <input name="neighborhood" type="text" class="small" placeholder="Neighborhood">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                 <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>5 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>What is your profession?</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <input name="profession" type="text" class="big" placeholder="Profession">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                 <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>6 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>What is your annual household income? (US$)</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-1" value="option1" name="radioInline" checked="">
+                          <label for="income-radio-1"><em>10-20K</em></label>
+                        </div>
+
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-2" value="option2" name="radioInline" checked="">
+                          <label for="income-radio-2"><em>20-50K</em></label>
+                        </div>
+
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-3" value="option2" name="radioInline" checked="">
+                          <label for="income-radio-3"><em>50-100K</em></label>
+                        </div>
+
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-4" value="option2" name="radioInline" checked="">
+                          <label for="income-radio-4"><em>100-200K</em></label>
+                        </div>
+
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-5" value="option2" name="radioInline" checked="">
+                          <label for="income-radio-5"><em>200-500K</em></label>
+                        </div>
+
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="income-radio-6" value="option2" name="radioInline" checked="">
+                          <label for="income-radio-6"><em>500K+</em></label>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <button class="center-block continue">
+                  <span>Continue</span>
+                  <span class="img img-double-arrow-right"></span>
+                </button>
+
+              </div>
+              <div role="tabpanel" class="tab-pane" id="step-2">
+                <div class="step-2">Step 2</div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="step-3">
+                <div class="step-3">Step 3</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
       </div> <!-- .container -->
     </div><!-- .container-fluid -->
 
@@ -58,6 +272,8 @@ Sign up now
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
