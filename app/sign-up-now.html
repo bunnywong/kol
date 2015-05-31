@@ -28,7 +28,7 @@
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -97,331 +97,615 @@
             </ul>
 
             <!-- Tab panes -->
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane js-step-1 " id="step-1">
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>1 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>What is your name? (We will only show your first name on your profile page)</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <input name="first-name" type="text" class="big" placeholder="First name"  autocomplete="off" />
-                        <input name="last-name" type="text" class="big" placeholder="Last name"  autocomplete="off" />
+            <form method="get" action="sign-up-now-finish.html" role="form" data-toggle="validator">
+            <div class="tab-content js-tab-content">
+                <div role="tabpanel" class="tab-pane js-step-1" id="step-1">
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your name? (We will only show your first name on your profile page)</em></span>
                       </div>
                     </div>
-                  </div>
-                </article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="inline-block">
+                            <input name="first-name" type="text" class="big" placeholder="First name"  autocomplete="off" required>
+                            <div class="error-msg js-error-msg">Please fill in the blank</div>
+                          </div>
+                          <div class="inline-block">
+                            <input name="last-name" type="text" class="big" placeholder="Last name"  autocomplete="off" >
+                            <div class="error-msg">Please fill in the blank</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
 
-                <article>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div>
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div>
+                          <span class="number font-brown"><strong>2 </strong></span>
+                          <span class="img img-question-stick"></span>
+                          <span class="question"><em>What is your age?</em></span>
+                        </div>
+
+                        <div>
+                          <input name="age" type="number" class="big" autocomplete="off" />
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div>
+                          <span class="number font-brown"><strong>3 </strong></span>
+                          <span class="img img-question-stick"></span>
+                          <span class="question"><em>What is your gender?</em></span>
+                        </div>
+
+                        <div>
+                          <select name="gender" class="selectpicker big">
+                            <option value=""> </option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>4 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Where do you live?</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="input-wrapper-inner">
+                            <select name="counmry" class="selectpicker small">
+                              <option value="">Country</option>
+                              <option value="usa">China</option>
+                              <option value="malaysia">Malaysia</option>
+                            </select>
+                          </div>
+
+                          <div class="input-wrapper-inner">
+                            <select name="city" class="selectpicker small">
+                              <option value="">City</option>
+                              <option value="Hong Kong">HK</option>
+                            </select>
+                          </div>
+
+                          <div class="input-wrapper-inner">
+                            <input name="neighborhood" type="text" class="small js-validate" placeholder="Neighborhood" autocomplete="off" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                   <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>5 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your profession?</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <input name="profession" type="text" class="big js-validate"  autocomplete="off" />
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                   <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>6 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your annual household income? (US$)</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-1" value="option1" name="household-income">
+                            <label for="income-radio-1"><em>10-20K</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-2" value="option2" name="household-income">
+                            <label for="income-radio-2"><em>20-50K</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-3" value="option2" name="household-income">
+                            <label for="income-radio-3"><em>50-100K</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-4" value="option2" name="household-income">
+                            <label for="income-radio-4"><em>100-200K</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-5" value="option2" name="household-income">
+                            <label for="income-radio-5"><em>200-500K</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="income-radio-6" value="option2" name="household-income">
+                            <label for="income-radio-6"><em>500K+</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <button type="button" class="center-block continue js-step-1-continue" type="button">
+                    <span>Continue</span>
+                    <span class="img img-double-arrow-right"></span>
+                  </button>
+                </div>
+
+                <div role="tabpanel" class="tab-pane step-2 active" id="step-2">
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Which Social Network Platforms do you use?</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-facebook" name="facebook-checkbox" data-name="facebook" class="js-social">
+                            <label for="checkbox-facebook">
+                                <em>Facebook</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-twitter"  name="twitter-checkbox" data-name="twitter" class="js-social">
+                            <label for="checkbox-twitter">
+                                <em>Twitter</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-pinterest" name="pinterest-checkbox" data-name="pinterest" class="js-social">
+                            <label for="checkbox-pinterest">
+                                <em>Pinterest</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-instagram" name="instagram-checkbox" data-name="instagram" class="js-social">
+                            <label for="checkbox-instagram">
+                                <em>Instagram</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-youtube" name="youtube-checkbox" data-name="youtube" class="js-social">
+                            <label for="checkbox-youtube">
+                                <em>You Tube</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-wechat" name="wechat-checkbox" data-name="wechat" class="js-social">
+                            <label for="checkbox-wechat">
+                                <em>WeChat</em>
+                            </label>
+                          </div>
+
+                          <div class="checkbox">
+                            <input type="checkbox" id="checkbox-weibo" name="weibo-checkbox" data-name="weibo" class="js-social">
+                            <label for="checkbox-weibo">
+                                <em>Weibo</em>
+                            </label>
+                          </div>
+
+                      </div>
+                  </article>
+
+                  <article class="sub-question facebook js-facebook js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.1 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your facebook</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="facebook-radio-1" value="option1" name="facebook">
+                            <label for="facebook-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="facebook-radio-2" value="option2" name="facebook">
+                            <label for="facebook-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="facebook-radio-3" value="option2" name="facebook">
+                            <label for="facebook-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="facebook-radio-4" value="option2" name="facebook">
+                            <label for="facebook-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="facebook-radio-5" value="option2" name="facebook">
+                            <label for="facebook-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question twitter js-twitter js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.2 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your twitter</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="twitter-radio-1" value="option1" name="twitter">
+                            <label for="twitter-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="twitter-radio-2" value="option2" name="twitter">
+                            <label for="twitter-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="twitter-radio-3" value="option2" name="twitter">
+                            <label for="twitter-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="twitter-radio-4" value="option2" name="twitter">
+                            <label for="twitter-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="twitter-radio-5" value="option2" name="twitter">
+                            <label for="twitter-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question pinterest js-pinterest js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.3 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your pinterest</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="pinterest-radio-1" value="option1" name="pinterest">
+                            <label for="pinterest-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="pinterest-radio-2" value="option2" name="pinterest">
+                            <label for="pinterest-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="pinterest-radio-3" value="option2" name="pinterest">
+                            <label for="pinterest-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="pinterest-radio-4" value="option2" name="pinterest">
+                            <label for="pinterest-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="pinterest-radio-5" value="option2" name="pinterest">
+                            <label for="pinterest-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question instagram js-instagram js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.4 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your instagram</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="instagram-radio-1" value="option1" name="instagram">
+                            <label for="instagram-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="instagram-radio-2" value="option2" name="instagram">
+                            <label for="instagram-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="instagram-radio-3" value="option2" name="instagram">
+                            <label for="instagram-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="instagram-radio-4" value="option2" name="instagram">
+                            <label for="instagram-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="instagram-radio-5" value="option2" name="instagram">
+                            <label for="instagram-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question youtube js-youtube js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.5 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your youtube</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="youtube-radio-1" value="option1" name="youtube">
+                            <label for="youtube-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="youtube-radio-2" value="option2" name="youtube">
+                            <label for="youtube-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="youtube-radio-3" value="option2" name="youtube">
+                            <label for="youtube-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="youtube-radio-4" value="option2" name="youtube">
+                            <label for="youtube-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="youtube-radio-5" value="option2" name="youtube">
+                            <label for="youtube-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question wechat js-wechat js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.6 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your wechat</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="wechat-radio-1" value="option1" name="wechat">
+                            <label for="wechat-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="wechat-radio-2" value="option2" name="wechat">
+                            <label for="wechat-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="wechat-radio-3" value="option2" name="wechat">
+                            <label for="wechat-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="wechat-radio-4" value="option2" name="wechat">
+                            <label for="wechat-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="wechat-radio-5" value="option2" name="wechat">
+                            <label for="wechat-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="sub-question weibo js-weibo js-sub-question">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1.7 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please share the number of friends on your weibo</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="weibo-radio-1" value="option1" name="weibo">
+                            <label for="weibo-radio-1"><em>100-500</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="weibo-radio-2" value="option2" name="weibo">
+                            <label for="weibo-radio-2"><em>500-1000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="weibo-radio-3" value="option2" name="weibo">
+                            <label for="weibo-radio-3"><em>1000-2000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="weibo-radio-4" value="option2" name="weibo">
+                            <label for="weibo-radio-4"><em>2000-3000</em></label>
+                          </div>
+
+                          <div class="radio radio-info radio-inline">
+                            <input type="radio" id="weibo-radio-5" value="option2" name="weibo">
+                            <label for="weibo-radio-5"><em>3000 +</em></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
                         <span class="number font-brown"><strong>2 </strong></span>
                         <span class="img img-question-stick"></span>
-                        <span class="question"><em>What is your age?</em></span>
-                      </div>
-
-                      <div>
-                        <input name="age" type="number" class="big" autocomplete="off" />
+                        <span class="question"><em>Please tag favorite brands you have purchased in the past year (include clothing, accessories, electronics, stores, food and drinks).</em></span>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                         <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" />
+                         <button type="button" class="apply absolute">Apply</button>
+                      </div>
+                  </article>
 
-                    <div class="col-lg-6">
-                      <div>
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
                         <span class="number font-brown"><strong>3 </strong></span>
                         <span class="img img-question-stick"></span>
-                        <span class="question"><em>What is your gender?</em></span>
-                      </div>
-
-                      <div>
-                        <select name="gender" class="selectpicker big">
-                          <option value=""> </option>
-                          <option value="M">Male</option>
-                          <option value="F">Female</option>
-                        </select>
+                        <span class="question"><em>Please tag brand names of venues where you typically hangout, socialize, play, eat and shop.</em></span>
                       </div>
                     </div>
-                  </div>
-                </article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                         <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" />
+                         <button type="button" class="apply absolute">Apply</button>
+                      </div>
+                  </article>
 
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>4 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Where do you live?</em></span>
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>4 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Please tag your most frequent activities or hobbies.</em></span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <div class="input-wrapper-inner">
-                          <select name="counmry" class="selectpicker small">
-                            <option value="">Country</option>
-                            <option value="usa">China</option>
-                            <option value="malaysia">Malaysia</option>
-                          </select>
-                        </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                         <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off"/>
+                         <button type="button" class="apply absolute">Apply</button>
+                      </div>
+                  </article>
 
-                        <div class="input-wrapper-inner">
-                          <select name="city" class="selectpicker small">
-                            <option value="">City</option>
-                            <option value="Hong Kong">HK</option>
-                          </select>
-                        </div>
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>4 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>Do you have any skills or abilities potentially useful for brands & advertisers?</em></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                         <textarea></textarea>
+                      </div>
+                  </article>
 
-                        <div class="input-wrapper-inner">
-                          <input name="neighborhood" type="text" class="small" placeholder="Neighborhood" autocomplete="off" />
+
+
+                  <button type="button" class="center-block continue js-step-2-continue">
+                    <span>Continue</span>
+                    <span class="img img-double-arrow-right"></span>
+                  </button>
+                </div>
+
+                <div role="tabpanel" class="tab-pane step-3" id="step-3">
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="remark text-center">
+                          <em>Brands and advertisers must be able to contact you on short notice in order to hire you for marketing campaigns and activities. Please provide us with a <span class="font-brown">working e-mail address</span> for clients to perform outreach via our directory profiles. Thank you!</em>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
 
-                 <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>5 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>What is your profession?</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <input name="profession" type="text" class="big"  autocomplete="off" />
+                  <article>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <span class="number font-brown"><strong>1 </strong></span>
+                        <span class="img img-question-stick"></span>
+                        <span class="question"><em>What is your email?</em></span>
                       </div>
                     </div>
-                  </div>
-                </article>
-
-                 <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>6 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>What is your annual household income? (US$)</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-1" value="option1" name="radioInline" checked="">
-                          <label for="income-radio-1"><em>10-20K</em></label>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-wrapper">
+                          <input name="email" type="email" class="full" autocomplete="off">
                         </div>
-
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-2" value="option2" name="radioInline" checked="">
-                          <label for="income-radio-2"><em>20-50K</em></label>
-                        </div>
-
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-3" value="option2" name="radioInline" checked="">
-                          <label for="income-radio-3"><em>50-100K</em></label>
-                        </div>
-
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-4" value="option2" name="radioInline" checked="">
-                          <label for="income-radio-4"><em>100-200K</em></label>
-                        </div>
-
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-5" value="option2" name="radioInline" checked="">
-                          <label for="income-radio-5"><em>200-500K</em></label>
-                        </div>
-
-                        <div class="radio radio-info radio-inline">
-                          <input type="radio" id="income-radio-6" value="option2" name="radioInline" checked="">
-                          <label for="income-radio-6"><em>500K+</em></label>
-                        </div>
-
-
-
                       </div>
                     </div>
-                  </div>
-                </article>
-                <button class="center-block continue js-step-1-continue">
-                  <span>Continue</span>
-                  <span class="img img-double-arrow-right"></span>
-                </button>
+                  </article>
 
-              </div>
-              <div role="tabpanel" class="tab-pane step-2 active" id="step-2">
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>1 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Which Social Network Platforms do you use?</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-facebook">
-                          <label for="checkbox-facebook">
-                              <em>Facebook</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-twitter">
-                          <label for="checkbox-twitter">
-                              <em>Twitter</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-pinterest">
-                          <label for="checkbox-pinterest">
-                              <em>Pinterest</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-instagram">
-                          <label for="checkbox-instagram">
-                              <em>Instagram</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-youtube">
-                          <label for="checkbox-youtube">
-                              <em>You Tube</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-wechat">
-                          <label for="checkbox-wechat">
-                              <em>WeChat</em>
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <input type="checkbox" id="checkbox-weibo">
-                          <label for="checkbox-weibo">
-                              <em>Weibo</em>
-                          </label>
-                        </div>
-
-                    </div>
-                </article>
-
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>2 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Please tag favorite brands you have purchased in the past year (include clothing, accessories, electronics, stores, food and drinks).</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                       <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" />
-                       <button class="apply absolute">Apply</button>
-                    </div>
-                </article>
-
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>3 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Please tag brand names of venues where you typically hangout, socialize, play, eat and shop.</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                       <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" />
-                       <button class="apply absolute">Apply</button>
-                    </div>
-                </article>
-
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>4 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Please tag your most frequent activities or hobbies.</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                       <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off"/>
-                       <button class="apply absolute">Apply</button>
-                    </div>
-                </article>
-
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>4 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>Do you have any skills or abilities potentially useful for brands & advertisers?</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                       <textarea></textarea>
-                    </div>
-                </article>
-
-
-
-                <button class="center-block continue js-step-2-continue">
-                  <span>Continue</span>
-                  <span class="img img-double-arrow-right"></span>
-                </button>
-
-              </div>
-              <div role="tabpanel" class="tab-pane step-3" id="step-3">
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="remark text-center">
-                        <em>Brands and advertisers must be able to contact you on short notice in order to hire you for marketing campaigns and activities. Please provide us with a <span class="font-brown">working e-mail address</span> for clients to perform outreach via our directory profiles. Thank you!</em>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <span class="number font-brown"><strong>1 </strong></span>
-                      <span class="img img-question-stick"></span>
-                      <span class="question"><em>What is your email?</em></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="input-wrapper">
-                        <input name="email" type="email" class="full" autocomplete="off">
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <button class="center-block continue submit js-step-3-submit">
-                  <span>Submit</span>
-                </button>
-
-              </div>
+                  <button class="center-block continue submit js-step-3-submit">
+                    <span>Submit</span>
+                  </button>
+                </div>
             </div>
+          </form>
 
           </div>
         </section>
@@ -435,9 +719,11 @@
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 
+        <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+        <script src="bower_components/bootstrap-validator/dist/validator.min.js"></script>
+
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
