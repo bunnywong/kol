@@ -13,10 +13,10 @@
 
 
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css"/>
-
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"/>
+    <link rel="stylesheet" href="styles/main.css">
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -66,8 +66,8 @@
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs text-center" role="tablist">
-              <li role="presentation center-block" class="active">
-                <a href="#step-1" aria-controls="home" role="tab" data-toggle="tab">
+              <li role="presentation center-block">
+                <a href="#step-1" aria-controls="home" role="tab" data-toggle="tab" class="js-step-1-nav">
                   <div class="ball">
                     <span>1</span>
                   </div>
@@ -75,8 +75,8 @@
                 </a>
               </li>
 
-              <li role="presentation center-block">
-                <a href="#step-2" aria-controls="step-2" role="tab" data-toggle="tab" class="disable">
+              <li role="presentation center-block" class="active">
+                <a href="#step-2" aria-controls="step-2" role="tab" data-toggle="tab" class="disable js-step-2-nav">
                   <div class="ball ">
                     <span>2</span>
                     <hr class="step-2-bar step-bar absolute">
@@ -86,7 +86,7 @@
               </li>
 
               <li role="presentation center-block">
-                <a href="#step-3" aria-controls="step-3" role="tab" data-toggle="tab" class="disable">
+                <a href="#step-3" aria-controls="step-3" role="tab" data-toggle="tab" class="disable js-step-3-nav">
                   <div class="ball">
                     <span>3</span>
                     <hr class="step-3-bar step-bar absolute">
@@ -98,7 +98,7 @@
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active js-step-1" id="step-1">
+              <div role="tabpanel" class="tab-pane js-step-1 " id="step-1">
                 <article>
                   <div class="row">
                     <div class="col-lg-12">
@@ -110,8 +110,8 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="input-wrapper">
-                        <input name="first-name" type="text" class="big" placeholder="First name">
-                        <input name="last-name" type="text" class="big" placeholder="Last name">
+                        <input name="first-name" type="text" class="big" placeholder="First name"  autocomplete="off" />
+                        <input name="last-name" type="text" class="big" placeholder="Last name"  autocomplete="off" />
                       </div>
                     </div>
                   </div>
@@ -127,7 +127,7 @@
                       </div>
 
                       <div>
-                        <input name="age" type="number" class="big" placeholder="Age">
+                        <input name="age" type="number" class="big" autocomplete="off" />
                       </div>
                     </div>
 
@@ -140,7 +140,7 @@
 
                       <div>
                         <select name="gender" class="selectpicker big">
-                          <option value="">Gender</option>
+                          <option value=""> </option>
                           <option value="M">Male</option>
                           <option value="F">Female</option>
                         </select>
@@ -176,7 +176,7 @@
                         </div>
 
                         <div class="input-wrapper-inner">
-                          <input name="neighborhood" type="text" class="small" placeholder="Neighborhood">
+                          <input name="neighborhood" type="text" class="small" placeholder="Neighborhood" autocomplete="off" />
                         </div>
                       </div>
                     </div>
@@ -194,7 +194,7 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="input-wrapper">
-                        <input name="profession" type="text" class="big" placeholder="Profession">
+                        <input name="profession" type="text" class="big"  autocomplete="off" />
                       </div>
                     </div>
                   </div>
@@ -247,17 +247,179 @@
                     </div>
                   </div>
                 </article>
-                <button class="center-block continue">
+                <button class="center-block continue js-step-1-continue">
                   <span>Continue</span>
                   <span class="img img-double-arrow-right"></span>
                 </button>
 
               </div>
-              <div role="tabpanel" class="tab-pane" id="step-2">
-                <div class="step-2">Step 2</div>
+              <div role="tabpanel" class="tab-pane step-2 active" id="step-2">
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>1 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Which Social Network Platforms do you use?</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-facebook">
+                          <label for="checkbox-facebook">
+                              <em>Facebook</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-twitter">
+                          <label for="checkbox-twitter">
+                              <em>Twitter</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-pinterest">
+                          <label for="checkbox-pinterest">
+                              <em>Pinterest</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-instagram">
+                          <label for="checkbox-instagram">
+                              <em>Instagram</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-youtube">
+                          <label for="checkbox-youtube">
+                              <em>You Tube</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-wechat">
+                          <label for="checkbox-wechat">
+                              <em>WeChat</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox-weibo">
+                          <label for="checkbox-weibo">
+                              <em>Weibo</em>
+                          </label>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>2 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Please tag favorite brands you have purchased in the past year (include clothing, accessories, electronics, stores, food and drinks).</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                       <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" />
+                       <button class="apply absolute">Apply</button>
+                    </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>3 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Please tag brand names of venues where you typically hangout, socialize, play, eat and shop.</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                       <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" />
+                       <button class="apply absolute">Apply</button>
+                    </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>4 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Please tag your most frequent activities or hobbies.</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                       <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off"/>
+                       <button class="apply absolute">Apply</button>
+                    </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>4 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>Do you have any skills or abilities potentially useful for brands & advertisers?</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                       <textarea></textarea>
+                    </div>
+                </article>
+
+
+
+                <button class="center-block continue js-step-2-continue">
+                  <span>Continue</span>
+                  <span class="img img-double-arrow-right"></span>
+                </button>
+
               </div>
-              <div role="tabpanel" class="tab-pane" id="step-3">
-                <div class="step-3">Step 3</div>
+              <div role="tabpanel" class="tab-pane step-3" id="step-3">
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="remark text-center">
+                        <em>Brands and advertisers must be able to contact you on short notice in order to hire you for marketing campaigns and activities. Please provide us with a <span class="font-brown">working e-mail address</span> for clients to perform outreach via our directory profiles. Thank you!</em>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <span class="number font-brown"><strong>1 </strong></span>
+                      <span class="img img-question-stick"></span>
+                      <span class="question"><em>What is your email?</em></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-wrapper">
+                        <input name="email" type="email" class="full" autocomplete="off">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <button class="center-block continue submit js-step-3-submit">
+                  <span>Submit</span>
+                </button>
+
               </div>
             </div>
 
@@ -274,6 +436,8 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+        <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
