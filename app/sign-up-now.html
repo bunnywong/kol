@@ -22,7 +22,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="sign-up-now">
+  <body class="sign-up-now form">
     <nav class="navbar stick navbar-default">
       <div class="container-fluid">
         <div class="container">
@@ -41,8 +41,8 @@
           <div class="collapse navbar-collapse center-block" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav center-block">
               <li role="presentation"><a href="index.html"><span>Home</span></a></li>
-              <li role="presentation"class="active"><a href="#"><span>How It Works</span></a></li>
-              <li role="presentation"><a href="sign-up-now.html"><span>Sign Up Now</span></a></li>
+              <li role="presentation"><a href="kol.html"><span>How It Works</span></a></li>
+              <li role="presentation" class="active"><a href="sign-up-now.html"><span>Sign Up Now</span></a></li>
               <li role="presentation"><a href="#"><span>Contact</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -111,13 +111,13 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="input-wrapper">
-                          <div class="inline-block">
-                            <input name="first-name" type="text" class="big" placeholder="First name"  autocomplete="off" required>
-                            <div class="error-msg js-error-msg">Please fill in the blank</div>
+                          <div class="form-group inline-block pull-left">
+                            <input name="first-name" type="text" class="big" placeholder="First name" autocomplete="off" data-error="First name is required" required>
+                            <div class="help-block with-errors"></div>
                           </div>
-                          <div class="inline-block">
-                            <input name="last-name" type="text" class="big" placeholder="Last name"  autocomplete="off" >
-                            <div class="error-msg">Please fill in the blank</div>
+                          <div class="form-group inline-block pull-left">
+                            <input name="last-name" type="text" class="big" placeholder="Last name"  autocomplete="off"  data-error="Last name is required" required>
+                            <div class="help-block with-errors"></div>
                           </div>
                         </div>
                       </div>
@@ -133,8 +133,9 @@
                           <span class="question"><em>What is your age?</em></span>
                         </div>
 
-                        <div>
-                          <input name="age" type="number" class="big" autocomplete="off" />
+                        <div class="form-group">
+                          <input name="age" type="number" class="big" autocomplete="off" pattern="^[0-9]*[1-9][0-9]*$"  data-error="Numbers only" required>
+                           <span class="help-block with-errors"></span>
                         </div>
                       </div>
 
@@ -145,12 +146,13 @@
                           <span class="question"><em>What is your gender?</em></span>
                         </div>
 
-                        <div>
-                          <select name="gender" class="selectpicker big">
+                        <div class="form-group">
+                          <select name="gender" class="selectpicker big" data-error"abc" required>
                             <option value=""> </option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                           </select>
+                          <div class="help-block with-errors"></div>
                         </div>
                       </div>
                     </div>
@@ -200,8 +202,9 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
-                          <input name="profession" type="text" class="big js-validate"  autocomplete="off" />
+                        <div class="input-wrapper form-group">
+                          <input name="profession" type="text" class="big js-validate"  autocomplete="off" data-error="Please input your profession" required>
+                          <div class="help-block with-errors"></div>
                         </div>
                       </div>
                     </div>
@@ -219,7 +222,7 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-1" value="option1" name="household-income">
+                            <input type="radio" id="income-radio-1" value="option1" name="household-income" checked>
                             <label for="income-radio-1"><em>10-20K</em></label>
                           </div>
 
@@ -257,7 +260,7 @@
                   </button>
                 </div>
 
-                <div role="tabpanel" class="tab-pane step-2 active" id="step-2">
+                <div role="tabpanel" class="tab-pane js-step-2 active" id="step-2">
                   <article>
                     <div class="row">
                       <div class="col-lg-12">
@@ -611,10 +614,13 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
-                         <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" />
-                         <button type="button" class="apply absolute">Apply</button>
+                        <div class="input-wrapper form-group">
+                          <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input your favorite brands" required>
+                          <div class="help-block with-errors"></div>
+                          <button type="button" class="apply absolute">Apply</button>
+                        </div>
                       </div>
+                    </div>
                   </article>
 
                   <article>
@@ -627,10 +633,13 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
-                         <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" />
-                         <button type="button" class="apply absolute">Apply</button>
+                        <div class="input-wrapper form-group">
+                          <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" data-error="Please input brands name" required>
+                          <div class="help-block with-errors"></div>
+                          <button type="button" class="apply absolute">Apply</button>
+                        </div>
                       </div>
+                    </div>
                   </article>
 
                   <article>
@@ -643,10 +652,13 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
-                         <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off"/>
+                        <div class="input-wrapper form-group">
+                         <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input activities or hobbies." required>
+                         <div class="help-block with-errors"></div>
                          <button type="button" class="apply absolute">Apply</button>
+                        </div>
                       </div>
+                    </div>
                   </article>
 
                   <article>
@@ -659,7 +671,7 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
+                        <div class="input-wrapper form-group">
                          <textarea></textarea>
                       </div>
                   </article>
@@ -693,8 +705,9 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="input-wrapper">
-                          <input name="email" type="email" class="full" autocomplete="off">
+                        <div class="input-wrapper form-group">
+                          <input name="email" type="email" class="full" autocomplete="off" data-error="Email address is invalid" required>
+                          <div class="help-block with-errors"></div>
                         </div>
                       </div>
                     </div>

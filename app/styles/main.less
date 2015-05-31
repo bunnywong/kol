@@ -3,7 +3,7 @@ input:active {
 	outline: none!important;
 }
 
-  /*
+ /*
  - Ref -
 	http://silviomoreto.github.io/bootstrap-select/
 	https://github.com/flatlogic/awesome-bootstrap-checkbox
@@ -20,6 +20,7 @@ input:active {
 	=Index
 	=KOL & Advertiser
 -------------------------------------------------- */
+
 .debug {
 	border: 1px solid red;
 }
@@ -297,6 +298,14 @@ background: white!important; */
 			}
 		}
 	}
+}
+.with-errors {
+	margin-left: 0px!important;
+	position: absolute;
+	margin-top: 10px;
+	color: @red!important;
+	font-style: italic;
+	font-size: 18px;
 }
 .placeholder-style-common() {
 	color: @gray!important;
@@ -991,11 +1000,6 @@ body.sign-up-now {
 								position: relative;
 							}
 						}
-						.error-msg {
-							display: none;
-							margin-top: 10px;
-							color: @red;
-						}
 						// Assign margin-left for [ nor-first-element ]
 						.input-wrapper {
 							font-size: 18px;
@@ -1067,7 +1071,7 @@ body.sign-up-now {
 									background-color: @gold-click;
 								}
 							}
-							~input {
+							input {
 								top: -10px;
 								position: relative;
 							}
