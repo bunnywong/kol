@@ -2,6 +2,7 @@
 	- Table of content -
 
 	=Debug
+	=Country options
 	=Form validator
 	=Step 1 validator
 	=Step 2 validator
@@ -10,9 +11,23 @@
 
 /*	=Debug
 -------------------------------------------------- */
-$('.js-step-1-nav').trigger('click');
+$('.js-step-2-nav').trigger('click');
 
 $(document).ready(function(){
+
+	/*	=Country options
+	-------------------------------------------------- */
+	 $('.js-countries .bfh-selectbox-option').on('change', function() {
+			// var val = $('.js-countries input').val();
+			alert();
+		});
+
+	 setTimeout(function(){
+
+		$('.js-countries .bfh-selectbox-option').text('Country');
+		$('.js-states .bfh-selectbox-option').text('City');
+	 }, 1000);
+
 
 	/*	=Form validator
 	-------------------------------------------------- */
@@ -35,7 +50,6 @@ $(document).ready(function(){
 
 		$('.js-step-1 input:required').each(function() {
 			var selfVal = $(this).val()
-			// alert(selfVal)
 			if(selfVal == '')
 				blankQty++;
 		});
@@ -43,6 +57,7 @@ $(document).ready(function(){
 		if(hasErrorMsg == 0 && blankQty == 0) {
 			$('.js-step-2-nav').removeClass('disable');
 			$('.js-step-2-nav').trigger('click');
+			 $("html, body").animate({ scrollTop: 0 }, "slow");
 		} else {
 	    $('html, body').animate({
 	        scrollTop: $('.js-step-1').offset().top

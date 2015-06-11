@@ -9,7 +9,8 @@
     "font-awesome": "~4.3.0",
     "bootstrap-select": "~1.7.2",
     "bootstrap-tagsinput": "~0.5.0",
-    "bootstrap-validator": "~0.8.1"
+    "bootstrap-validator": "~0.8.1",
+    "bootstrap-form-helpers": "~2.3.0"
   },
   "devDependencies": {}
 }

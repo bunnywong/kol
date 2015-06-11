@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-form-helpers/dist/css/bootstrap-formhelpers.min.css"/>
     <link rel="stylesheet" href="styles/main.css">
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -103,6 +104,10 @@
                   <article>
                     <div class="row">
                       <div class="col-lg-12">
+
+
+
+
                         <span class="number font-brown"><strong>1 </strong></span>
                         <span class="img img-question-stick"></span>
                         <span class="question"><em>What is your name? (We will only show your first name on your profile page)</em></span>
@@ -134,7 +139,7 @@
                         </div>
 
                         <div class="form-group">
-                          <input name="age" type="number" class="big" autocomplete="off" pattern="^[0-9]*[1-9][0-9]*$"  data-error="Numbers only" required>
+                          <input name="age" type="number" class="big" autocomplete="off" pattern="^[0-9]*[1-9][0-9]*$"  data-error="Numbers only"  required>
                            <span class="help-block with-errors"></span>
                         </div>
                       </div>
@@ -147,7 +152,7 @@
                         </div>
 
                         <div class="form-group">
-                          <select name="gender" class="selectpicker big" data-error"abc" required>
+                          <select name="gender" class="selectpicker big" data-error"Please input gender" required>
                             <option value=""> </option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
@@ -170,22 +175,43 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="input-wrapper-inner">
-                            <select name="counmry" class="selectpicker small">
-                              <option value="">Country</option>
-                              <option value="usa">China</option>
-                              <option value="malaysia">Malaysia</option>
-                            </select>
+                            <div id="countries-states" class="bfh-selectbox bfh-countries js-countries" data-country="">
+                              <input type="hidden" name="country" value="" data-error="Please select country">
+
+
+                              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                                <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                                <span class="caret"></span>
+                              </a>
+                              <div class="bfh-selectbox-options">
+                              <div role="listbox">
+                                <ul role="option">
+                                </ul>
+                                </div>
+                              </div>
+                            </div>
                           </div>
 
-                          <div class="input-wrapper-inner">
-                            <select name="city" class="selectpicker small">
-                              <option value="">City</option>
-                              <option value="Hong Kong">HK</option>
-                            </select>
+                          <div class="form-group input-wrapper-inner">
+                            <div class="bfh-selectbox bfh-states js-states" data-country="countries-states">
+                              <input type="hidden" name="city" value="" data-error="Please input" required>
+                              <div class="help-block with-errors"></div>
+                              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                                <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                                <b class="caret"></b>
+                              </a>
+                              <div class="bfh-selectbox-options">
+                                <div role="listbox">
+                                  <ul role="option"></ul>
+                                </div>
+                                <span class="help-block with-errors"></span>
+                              </div>
+                            </div>
                           </div>
 
-                          <div class="input-wrapper-inner">
-                            <input name="neighborhood" type="text" class="small js-validate" placeholder="Neighborhood" autocomplete="off" />
+                          <div class="input-wrapper-inner form-group">
+                            <input name="neighborhood" type="text" class="small js-validate" placeholder="Neighborhood" data-error="Please input neighborhood" autocomplete="off" required >
+                            <div class="help-block with-errors"></div>
                           </div>
                         </div>
                       </div>
@@ -722,6 +748,7 @@
         <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
         <script src="bower_components/bootstrap-validator/dist/validator.min.js"></script>
+        <script src="bower_components/bootstrap-form-helpers/dist/js/bootstrap-formhelpers.min.js"></script>
 
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
