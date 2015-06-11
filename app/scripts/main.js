@@ -81,7 +81,6 @@ $(document).ready(function(){
 		var matchName = $(this).data('name')
 
 		if(isChecked) {
-			$('.js-sub-question').hide();
 			$('.js-' + matchName).slideDown();
 		} else {
 			$('.js-' + matchName).slideUp();
