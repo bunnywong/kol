@@ -31,15 +31,17 @@ $(document).ready(function(){
 
 	/*	=Form validator
 	-------------------------------------------------- */
-	$('form').validator().on('submit', function (e) {
-	  if (e.isDefaultPrevented()) {
-	    // handle the invalid form...
-	    // alert('bad')
-	  } else {
-	    // everything looks good!
-	    // alert('good')
-	  }
-	});
+	if($('body').hasClass('form')) {
+		$('form').validator().on('submit', function (e) {
+		  if (e.isDefaultPrevented()) {
+		    // handle the invalid form...
+		    // alert('bad')
+		  } else {
+		    // everything looks good!
+		    // alert('good')
+		  }
+		});
+	}
 
 	/*	=Step 1 validator
 	-------------------------------------------------- */
