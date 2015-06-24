@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>
@@ -104,10 +103,6 @@
                   <article>
                     <div class="row">
                       <div class="col-lg-12">
-
-
-
-
                         <span class="number font-brown"><strong>1 </strong></span>
                         <span class="img img-question-stick"></span>
                         <span class="question"><em>What is your name? (We will only show your first name on your profile page)</em></span>
@@ -152,7 +147,7 @@
                         </div>
 
                         <div class="form-group">
-                          <select name="gender" class="selectpicker big" data-error"Please input gender" required>
+                          <select name="gender" class="selectpicker big js-gender" data-error"Please input gender" required>
                             <option value=""> </option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
@@ -178,18 +173,17 @@
                             <div id="countries-states" class="bfh-selectbox bfh-countries js-countries" data-country="">
                               <input type="hidden" name="country" value="" data-error="Please select country">
 
-
                               <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
                                 <span class="bfh-selectbox-option input-medium" data-option=""></span>
                                 <span class="caret"></span>
                               </a>
                               <div class="bfh-selectbox-options">
-                              <div role="listbox">
-                                <ul role="option">
-                                </ul>
+                                <div role="listbox">
+                                <ul role="option"></ul>
                                 </div>
                               </div>
                             </div>
+                            <span class="help-block with-errors"></span>
                           </div>
 
                           <div class="form-group input-wrapper-inner">
@@ -286,7 +280,7 @@
                   </button>
                 </div>
 
-                <div role="tabpanel" class="tab-pane js-step-2 active" id="step-2">
+                <div role="tabpanel" class="tab-pane js-step-2" id="step-2">
                   <article>
                     <div class="row">
                       <div class="col-lg-12">
@@ -688,8 +682,6 @@
                       </div>
                   </article>
 
-
-
                   <button type="button" class="center-block continue js-step-2-continue">
                     <span>Continue</span>
                     <span class="img img-double-arrow-right"></span>
@@ -744,7 +736,6 @@
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
         <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
         <script src="bower_components/bootstrap-validator/dist/validator.min.js"></script>

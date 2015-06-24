@@ -2,40 +2,53 @@
 	- Table of content -
 
 	=Debug
+	=Gender options
 	=Country options
-	=Form validator
-	=Step 1 validator
-	=Step 2 validator
+	=Form validate
+	=Step 1 validate
+	=Step 2 validate
 	=Social check binding
+	=Function
 -------------------------------------------------- */
 
-/*	=Debug
+/*	=Debug: Jump to step 2
 -------------------------------------------------- */
-$('.js-step-2-nav').trigger('click');
+// $('.js-step-1-nav').trigger('click');
 
 $(document).ready(function(){
 
+	/*	=Gender options
+	-------------------------------------------------- */
+	$('.js-gender').change(function() {
+			$('.js-gender').next('.with-errors').text('');
+	});
+
 	/*	=Country options
 	-------------------------------------------------- */
-	 $('.js-countries .bfh-selectbox-option').on('change', function() {
-			// var val = $('.js-countries input').val();
-			alert();
-		});
-
-	 setTimeout(function(){
-
+	// Rename title
+	setTimeout(function(){
 		$('.js-countries .bfh-selectbox-option').text('Country');
 		$('.js-states .bfh-selectbox-option').text('City');
-	 }, 1000);
+	}, 1000);
 
+	// Name <input>
+	$('.js-countries input').attr('name', 'country');
+	$('.js-states input').attr('name', 'city');
 
-	/*	=Form validator
+	// Country update, clean error text
+	$('.bfh-selectbox-options li').click(function() {
+		var thisVal = $(this).text();
+		if(thisVal != '')
+			$('.js-countries').next('.with-errors').text('');
+	});
+
+	/*	=Form validate
 	-------------------------------------------------- */
 	if($('body').hasClass('form')) {
 		$('form').validator().on('submit', function (e) {
 		  if (e.isDefaultPrevented()) {
 		    // handle the invalid form...
-		    // alert('bad')
+		    // alert('bad')`
 		  } else {
 		    // everything looks good!
 		    // alert('good')
@@ -43,7 +56,7 @@ $(document).ready(function(){
 		});
 	}
 
-	/*	=Step 1 validator
+	/*	=Step 1 validate
 	-------------------------------------------------- */
 	$('.js-step-1-continue').on('click', function() {
 		// 1. Do validator
@@ -59,15 +72,17 @@ $(document).ready(function(){
 		if(hasErrorMsg == 0 && blankQty == 0) {
 			$('.js-step-2-nav').removeClass('disable');
 			$('.js-step-2-nav').trigger('click');
-			 $("html, body").animate({ scrollTop: 0 }, "slow");
+			$("html, body").animate({ scrollTop: 0 }, "slow");
 		} else {
-	    $('html, body').animate({
+		  validateSelection();
+		  $('form').submit();
+		  $('html, body').animate({
 	        scrollTop: $('.js-step-1').offset().top
 	    }, 500);
 		}
 	});
 
-	/*	=Step 2 validator
+	/*	=Step 2 validate
 	-------------------------------------------------- */
 	$('.js-step-2-continue').on('click', function() {
 		// 1. Do validator
@@ -106,3 +121,16 @@ $(document).ready(function(){
 	});
 
 });
+
+/*	=Function
+-------------------------------------------------- */
+function validateSelection() {
+	var city = $('.js-countries input').val();
+	var gender = $('.js-gender option:selected').val();
+
+	if(city == '')
+		$('.js-countries').next('.with-errors').text('Please select country');
+
+	if(gender == '')
+		$('.js-gender').next('.with-errors').text('Please select gender');
+}
