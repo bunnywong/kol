@@ -1,5 +1,6 @@
 button {
 	display: block;
+	border-radius: 0px;
 	&:hover, &:focus, &:active, &:visited {
 		outline: none!important;
 		border: none!important;
@@ -115,6 +116,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .font-brown {
 	color: @orange;
 }
+.font-black {
+	color: @black!important;
+}
 
 .center-block {
 	margin-right: auto;
@@ -206,6 +210,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		border: 1px solid @black!important;
 		outline: none!important;
 		box-shadow: none!important;
+		border-radius: 0px;
 		&:hover {
 			background-color: white;
 		}
@@ -217,6 +222,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 			top: 10px;
 			position: relative;
 			.placeholder-style-common();
+		}
+		.caret {
+			margin-top: -1px!important;
 		}
 	}
 	li {
@@ -271,6 +279,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		border: 1px solid @black;
 		height: 70px;
 		width: @base;
+		border-radius: 0px;
 		&:hover {
 			color: @gray;
 		}
@@ -282,7 +291,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 			position: relative;
 			max-width: 220px;
 			border: 1px solid white;
-
 		}
 		.selectbox-caret {
 			margin-top: -36px!important;
@@ -416,6 +424,7 @@ a {
 }
 input {
 	border: 1px solid @black;
+	font-size: 18px;
 	&:focus {
 		border: 1px solid @gold;
 		outline: none;

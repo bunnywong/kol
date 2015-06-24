@@ -13,14 +13,15 @@
 
 /*	=Debug: Jump to step 2
 -------------------------------------------------- */
-// $('.js-step-1-nav').trigger('click');
+// $('.js-step-2-nav').trigger('click');
 
 $(document).ready(function(){
 
 	/*	=Gender options
 	-------------------------------------------------- */
 	$('.js-gender').change(function() {
-			$('.js-gender').next('.with-errors').text('');
+		$('.filter-option').attr('style','color: #171717!important;');
+		$('.js-gender').next('.with-errors').text('');
 	});
 
 	/*	=Country options
@@ -38,8 +39,10 @@ $(document).ready(function(){
 	// Country update, clean error text
 	$('.bfh-selectbox-options li').click(function() {
 		var thisVal = $(this).text();
-		if(thisVal != '')
+		if(thisVal != '') {
 			$('.js-countries').next('.with-errors').text('');
+			$('.bfh-selectbox-option').addClass('font-black');
+		}
 	});
 
 	/*	=Form validate
