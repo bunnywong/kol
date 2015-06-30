@@ -5937,6 +5937,11 @@ h6,
 -------------------------------------------------- */
 /* =Common Class
 -------------------------------------------------- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 @media (min-width: 801px) {
   .mobile-only {
     display: none;
@@ -5988,6 +5993,7 @@ h6,
 .no-gutter [class*="-10"] {
   padding-left: 0px;
   padding-right: 0px;
+  position: relative;
 }
 .img {
   display: inline-block;
@@ -6437,12 +6443,19 @@ body.home .container-fluid section.select-my-role {
   margin-top: 50px;
   position: relative;
 }
+@media (max-width: 800px) {
+  body.home .container-fluid section.select-my-role {
+    padding: 0px;
+  }
+}
 body.home .container-fluid section.select-my-role .img-container {
   position: relative;
-  max-width: 900px;
   margin: auto;
+  padding: 0 40px;
+}
+body.home .container-fluid section.select-my-role .img-container .image {
+  width: 100%;
   padding-bottom: 51%;
-  margin: 0 70px;
 }
 body.home .container-fluid section.select-my-role .str-iam {
   font-size: 20px;
@@ -6476,12 +6489,12 @@ body.home .container-fluid section.select-my-role .tip.link a:hover {
 }
 body.home .container-fluid section.select-my-role .description.left {
   position: absolute;
-  left: -40px;
+  left: 0px;
   bottom: 20%;
 }
 body.home .container-fluid section.select-my-role .description.right {
   top: 7%;
-  right: -40px;
+  right: 0px;
   position: absolute;
 }
 body.home .container-fluid section.select-my-role .description.right .text-bar {
@@ -6495,17 +6508,15 @@ body.home .container-fluid section.content div.title-bar {
   border-bottom: 3px solid #d3a849;
   position: relative;
   top: 40px;
-  left: -40px;
 }
 body.home .container-fluid section.content h2 {
   font-size: 40px;
   margin-left: 10px;
   position: relative;
-  left: -40px;
 }
 body.home .container-fluid section.content div.img-wrapper {
   margin-top: 30px;
-  right: 40px;
+  left: 0px;
   position: relative;
 }
 body.home .container-fluid section.content div.content-wrapper {
@@ -6513,8 +6524,8 @@ body.home .container-fluid section.content div.content-wrapper {
   max-width: 550px;
 }
 body.home .container-fluid section.content div.content-wrapper.right {
-  top: 14%;
-  left: 350px;
+  top: 160px;
+  left: 380px;
 }
 body.home .container-fluid section.content div.content-wrapper h4.first {
   margin-top: 40px;
@@ -6549,16 +6560,27 @@ body.home .container-fluid section.content div.content-wrapper button.right {
   margin-top: 40px;
   margin-right: 60px;
 }
+body.home .container-fluid section.content.advertisers {
+  margin-top: 150px;
+}
 body.home .container-fluid section.content.advertisers div.img-wrapper {
   margin-top: -50px;
 }
 body.home .container-fluid section.content.advertisers div.content-wrapper.left {
-  top: 35px;
-  left: 10px;
+  top: 170px;
+  left: 40px;
 }
 body.home .container-fluid section.content.advertisers button.left {
   margin-top: 55px;
-  left: -35px;
+  left: -23px;
+  position: relative;
+}
+body.home .select-my-role,
+body.home .key-opinion-leaders,
+body.home section.content.advertisers {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 /* =KOL & Advertiser

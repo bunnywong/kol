@@ -107,6 +107,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /* =Common Class
 -------------------------------------------------- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .responsive-mobile (@rules) {
   @media (max-width: 800px) {
   	@rules();
@@ -169,6 +173,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .no-gutter [class*="-10"] {
 	padding-left:0px;
   padding-right:0px;
+  position: relative;
 }
 
 .img {
@@ -595,7 +600,7 @@ body.home {
 	}
 	.container-fluid {
 		h1 {
-			font-size: 70px;
+			font-size: 70px;	
 			margin-top: 40px;
 		}
 		.sub-title {
@@ -646,12 +651,19 @@ body.home {
 		section.select-my-role {
 			margin-top: 50px;
 			position: relative;
+			.responsive-mobile({
+				padding: 0px;
+			});
 			.img-container {
 				position: relative;
-				max-width: 900px;
 				margin: auto;
-				padding-bottom: 51%;
-				margin: 0 70px;
+				padding: 0 40px;
+				
+				.image {
+					width: 100%;
+					padding-bottom: 51%;
+
+				}
 			}
 
 			.str-iam {
@@ -686,13 +698,13 @@ body.home {
 			}
 			.description.left {
 				position: absolute;
-				left: -40px;
+				left: 0px;
 				bottom: 20%;
 
 			}
 			.description.right {
 				top: 7%;
-				right: -40px;
+				right: 0px;
 				position: absolute;
 
 				.text-bar {
@@ -702,24 +714,21 @@ body.home {
 		}// !section.select-my-role
 
 		section.content {
-			@base: 40px;
 			margin-top: 110px;
 			div.title-bar {
 				width: 90px;
 				border-bottom: 3px solid @orange;
 				position: relative;
 				top: 40px;
-				left: -@base;
 			}
 			h2 {
 				font-size: 40px;
 				margin-left: 10px;
 				position: relative;
-				left: -@base;
 			}
 			div.img-wrapper {
 				margin-top: 30px;
-				right: 40px;
+				left: 0px;
 				position: relative;
 			}
 
@@ -727,8 +736,8 @@ body.home {
 				position: absolute;
 				max-width: 550px;
 				&.right {
-					top: 14%;
-					left: 350px;
+					top: 160px;
+					left: 380px;
 				}
 				h4.first {
 					margin-top: 40px;
@@ -770,21 +779,31 @@ body.home {
 		}
 		// over ride upper <section>
 		section.content.advertisers {
+			margin-top: 150px;
 			div.img-wrapper {
 				margin-top: -50px;
 			}
 			div.content-wrapper.left {
-				top: 35px;
-				left: 10px;
+				top: 170px;
+				left: 40px;
 			}
 			button.left {
 				margin-top: 55px;
-				left: -35px;
+				left: -23px;
 				position: relative;
 			}
 		}
 
 	}// !.container-fluid
+
+	.select-my-role,
+	.key-opinion-leaders,
+	section.content.advertisers {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
 }
 
 /* =KOL & Advertiser
