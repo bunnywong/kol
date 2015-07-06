@@ -2,6 +2,7 @@
 	- Table of content -
 
 	=Debug
+	=Mobile Nav
 	=Gender options
 	=Country options
 	=Form validate
@@ -16,6 +17,14 @@
 // $('.js-step-2-nav').trigger('click');
 
 $(document).ready(function(){
+
+	/*	=Mobile Nav
+	-------------------------------------------------- */
+	$('.mob-nav-toggle-button').on('click', function() {
+		$(this).toggleClass('active');
+	});
+
+
 
 	/*	=Gender options
 	-------------------------------------------------- */

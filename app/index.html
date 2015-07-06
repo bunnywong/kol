@@ -26,34 +26,41 @@
       <p class="text-center sub-title second"><em>/’keɪ oʊ ‘ɛl/ noun [C] abbr: trendsetters whose actions, attitudes, and pronouncements exert influence on those of others.</em></p>
 
       <div class="section-bar header center-block"></div>
-
-      <ul class="home nav nav-justified center-block">
+      <a class="mob-nav-toggle-button mobile-only" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false"><span></span></a>
+      <ul class="home nav nav-justified center-block desktop-only">
+        <li role="presentation" class="active"><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="kol.html">How It Works</a></li>
+        <li role="presentation"><a href="sign-up-now.html">Sign Up Now</a></li>
+        <li role="presentation"><a href="#">Contact</a></li>
+      </ul>
+      <ul class="home nav nav-justified center-block collapse mobile-only" id="mobile-nav">
         <li role="presentation" class="active"><a href="index.html">Home</a></li>
         <li role="presentation"><a href="kol.html">How It Works</a></li>
         <li role="presentation"><a href="sign-up-now.html">Sign Up Now</a></li>
         <li role="presentation"><a href="#">Contact</a></li>
       </ul>
 
+
       <section class="select-my-role animated fadeInUp">
-          <div class="img-container desktop-only">
-            <div class="background-contain-image image" style="background-image: url('images/home-banner-select-kol-or-advertiser.jpg')"></div>
-            <div class="description left text-left">
-              <div class="str-iam">I'm a</div>
-              <div class="font-big">KOL</div>
-              <div class="text-bar"></div>
-              <div class="tip first"><em>If I am available for hire by</em></div>
-              <div class="tip"><em>a company brand or product...</em></div>
-              <div class="tip link"><a href="kol.html"><em>Learn more</em></a></div>
-            </div>
-            <div class="description right text-right">
-              <div class="str-iam">I'm an</div>
-              <div class="font-big">Advertiser</div>
-              <div class="text-bar"></div>
-              <div class="text-right tip first"><em>If I manage a company,</em></div>
-              <div class="text-right tip"><em>brand or product...</em></div>
-              <div class="text-right tip link"><a href="advertiser.html"><em>Learn more</em></a></div>
-            </div>
-          </div>
+        <div class="background-contain-image image-both desktop-only" style="background-image: url('images/home-banner-select-kol-or-advertiser.jpg')"></div>
+        <div class="background-contain-image image-girl mobile-only" style="background-image: url('images/home_kol_mobile.png')"></div>
+        <div class="description left text-left">
+          <div class="str-iam">I'm a</div>
+          <div class="font-big">KOL</div>
+          <div class="text-bar"></div>
+          <div class="tip first"><em>If I am available for hire by</em></div>
+          <div class="tip"><em>a company brand or product...</em></div>
+          <div class="tip link"><a href="kol.html"><em>Learn more</em></a></div>
+        </div>
+        <div class="background-contain-image image-type mobile-only" style="background-image: url('images/home_advertiser_mobile.png')"></div>
+        <div class="description right text-right">
+          <div class="str-iam">I'm an</div>
+          <div class="font-big">Advertiser</div>
+          <div class="text-bar"></div>
+          <div class="tip first"><em>If I manage a company,</em></div>
+          <div class="tip"><em>brand or product...</em></div>
+          <div class="tip link"><a href="advertiser.html"><em>Learn more</em></a></div>
+        </div>
       </section>
 
       <section class="key-opinion-leaders content scrollflow -slide-top -opacity">
@@ -62,7 +69,7 @@
           <h2 class=" pull-left">Key Opinion Leders</h2>
         </div>
 
-        <div class="img-wrapper">
+        <div class="img-wrapper desktop-only">
           <img src="images/home-banner-kol.png">
         </div>
         <div class="content-wrapper right">
@@ -90,9 +97,9 @@
             </li>
           </ul>
           <div class="clearfix"></div>
-          <div class="row">
+          <div class="">
             <a href="kol.html">
-              <button class="right pull-right">
+              <button class="right">
                 <strong>Join Now</strong>
                 <span class="img img-double-arrow-right"></span>
               </button>
@@ -107,7 +114,7 @@
           <h2 class=" pull-left">Advertisers</h2>
         </div>
 
-        <div class="img-wrapper">
+        <div class="img-wrapper desktop-only">
           <img src="images/home-banner-advertisers.png">
         </div>
         <div class="content-wrapper left">
@@ -144,9 +151,9 @@
             </li>
           </ul>
           <div class="clearfix"></div>
-          <div class="row">
+          <div class="">
             <a href="advertiser.html">
-              <button class="left pull-left last">
+              <button class="left last">
                 <strong>Advertise Now</strong>
                 <span class="img img-double-arrow-right"></span>
               </button>
@@ -185,7 +192,8 @@
 
       <!-- build:js scripts/main.js -->
       <script src="bower_components/jquery/jquery.js"></script>
-      <script src="libraries/eskju-jquery-scrollflow-master/js/eskju.jquery.scrollflow.min.js"></script>
+      <script src="bower_components/bootstrap/js/collapse.js"></script>
+      <script src="libraries/eskju-jquery-scrollflow-master/js/eskju.jquery.scrollflow.js"></script>
       <script src="scripts/main.js"></script>
       <script src="scripts/hello.js"></script>
       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
