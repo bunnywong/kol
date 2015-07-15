@@ -474,6 +474,12 @@ input:focus::-moz-placeholder {
  color: transparent!important;
 }
 
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
 
 /* =Common dom
 -------------------------------------------------- */
@@ -514,6 +520,8 @@ body {
 	font-family : "Baskerville";
 	font-style: normal;
 	border: 12px solid @black;
+	border-top: 0px;
+
 	.browsehappy {
 	  margin     : 0.2em 0;
 	  background : #ccc;
@@ -536,11 +544,10 @@ body {
 		background-color: @black;
 		color: @white;
 		font-size: 14px;
-		padding-bottom: 10px;
 		border: 0px;
 		.navbar-brand {
 			font-size: 25px;
-			top: 5px;
+			// top: 5px;
 			left: 0px;
 			position: absolute;
 			&, &:hover {
@@ -549,7 +556,7 @@ body {
 		}
 		ul.nav {
 			float: none;
-			width: 500px;
+			width: 343px;
 			li {
 				margin: 0px 10px;
 				a {
@@ -623,10 +630,34 @@ body {
 	}
 }
 
-
+.container-fluid section {
+	margin-top: 50px;
+	max-width: 1060px;
+	padding: 0 25px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 /* =Header
 -------------------------------------------------- */
+.navbar {
+	border-radius: 0px;
+}
+.navbar-header {
+	height: 50px;
+}
 
+.navbar-nav {
+	@media (min-width: 768px) {
+		.center-block;
+
+	}
+}
 .mob-nav-toggle-button {
 
 	position: absolute;
@@ -676,6 +707,26 @@ body {
     transform: translateY(-10px) rotate(-45deg);
     top: 10px;
   }
+
+	&.default {
+		top: 0px;
+	  right: 0px;
+
+		span,
+		span:before,
+		span:after {
+			background-color: white;
+			@media (min-width: 768px) {
+				display: none;
+			}
+
+		}
+
+		&.active span {
+			background-color: transparent;
+
+		}
+	}
 }
 
 
@@ -715,7 +766,7 @@ body.home {
 		ul.nav.home {
 			margin-top: 15px;
 			font-size: 14px;
-			max-width: 530px;
+			max-width: 362px;
 			overflow: hidden;
 			.responsive-mobile({
 				// margin-top: 0px;
@@ -861,7 +912,7 @@ body.home {
 
 			div.content-wrapper {
 				position: absolute;
-				max-width: 500px;
+				max-width: 440px;
 				.responsive-mobile({
 					position: relative;
 				});
@@ -947,16 +998,9 @@ body.home {
 		}
 
 	}// !.container-fluid
-
 	.select-my-role,
 	.key-opinion-leaders,
 	section.content.advertisers {
-		margin-top: 50px;
-		padding: 0 25px;
-		max-width: 1060px;
-		margin-left: auto;
-		margin-right: auto;
-		position: relative;
 		.responsive-mobile({
 			margin-top: 20px;
 			padding: 0 10px;
@@ -968,52 +1012,44 @@ body.home {
  		PerfectPixel: 25 / 0
 -------------------------------------------------- */
 body.tutorial {
-	border-top: 0px;
-	&.kol {
-		background-image: url("../images/background-kol.jpg");
-		background-position: center -60px;
-		section.last {
-			margin-bottom: 65px;
-		}
-	}
-	&.advertisers { // User [s] name as here only
-		background-image: url("../images/background-advertiser.jpg");
-		background-position: center -40px;
-		section.last {
-			margin-bottom: 65px;
-		}
-	}
 	button {
-		margin-top: 30px;
+		margin: 30px auto 0 auto;
 		padding: 10px 30px 15px 30px;
 	}
 	h2 {
 		font-size: 54px;
-		margin-top: 110px;
+	}
+	.img-wrapper {
+		width: 100%;
+		height: 100%;
 	}
 	section.main-content {
+		text-align: center;
+		margin-top: 110px;
+
+
 		.text-bar {
 			height: 1px;
 			width: 90px;
 			border-bottom: 1px solid @gray;
 			margin-top: 30px;
 		}
-		div.content {
+		.content {
+			max-width: 400px;
+			margin: auto;
 			&.first {
 				margin-top: 30px;
 			}
 			font-size: 15px;
 			line-height: 25px;
 		}
-		.img-wrapper {
-			margin-top: 155px;
+		a:hover {
+			text-decoration: none;
 		}
 	}
-
-	section.step {
+	section.how-it-works {
 		.section-bar {
 			margin-top: 130px;
-			width: 1070px;
 			height: 1px;
 			border-bottom: 3px solid @orange;
 		}
@@ -1022,14 +1058,12 @@ body.tutorial {
 			margin-left: 35px;
 			margin-top: 65px;
 		}
-		.img-wrapper {
-			margin-top: -50px;
-			position: relative;
-		}
+	}
+	section.step {
+		margin-top: 30px;
 		.content-wrapper {
-			margin-top: 120px;
-			margin-left: 55px;
-			width: 290px;
+			width: 35%;
+			padding: 20px 0 0 30px;
 			h3 {
 				font-size: 38px;
 			}
@@ -1052,119 +1086,108 @@ body.tutorial {
 				margin-top: 10px;
 			}
 		}
+		.img-wrapper {
+			margin-top: -50px;
+			position: relative;
+			height: 400px;
+			padding: 45px 0;
+			width: 65%;
+			div {
+				height: 100%;
+			}
+
+		}
+	}
+
+	&.kol {
+		background-image: url("../images/background-kol.jpg");
+		background-position: center -60px;
+		section.kol {
+			.left, .right {
+				max-width: 500px;
+				width: 50%;
+			}
+			.image-speaker {
+				height: 400px;
+				padding: 45px 0;
+				.img-wrapper {
+					background-image: url('../images/kol-banner-main.png');
+				}
+			}
+		}
+
+
+		section.step-1 {
+			margin-top: -30px;
+		}
+		section.step-2 {
+			.content-wrapper {
+				text-align: right;
+			}
+		}
+		section.last {
+			margin-bottom: 65px;
+		}
 
 	}
-	section.step-2 {
-		.content-wrapper {
-			margin-left: 10px;
-			margin-top: 210px;
-			width: 230px;
+
+	&.advertisers { // User [s] name as here only
+		background-image: url("../images/background-advertiser.jpg");
+		background-position: center -40px;
+		section {
+			ul {
+				margin-left: 5px;
+				list-style:none;
+				padding-left: 0px;
+				li {
+					margin-top: 10px;
+					font-size: 17px;
+					padding-left: 40px;
+					background: url("../images/img-bullet.png") no-repeat 10px 5px;
+					line-height: 30px;
+				}
+			}
 		}
-		.img-wrapper {
-			margin-top: 115px;
-			margin-left: 30px;
-			position: relative;
+		section.advertisers {
+
+			.left, .right {
+				max-width: 500px;
+				width: 50%;
+			}
+			.image-pannel {
+				height: 400px;
+				margin-top: -50px;
+				.img-wrapper {
+					background-image: url('../images/advertiser-banner-main.png');
+				}
+			}
+		}
+		section.how-it-works {
+			.section-bar {
+				margin-top: 125px;
+			}
+		}
+		section.step {
+			.img-wrapper {
+				margin-top: -40px;
+				height: 540px;
+			}
+		}
+		section.last {
+			margin-bottom: 65px;
 		}
 	}
-	section.step-3 {
-		.content-wrapper {
-			margin-top: 260px;
-			margin-left: 70px;
-		}
-		.img-wrapper {
-			margin-top: 105px;
-			margin-left: 50px;
-		}
-	}
+
+
 	button.last {
-		margin-top: 80px;
+		margin-top: 50px;
 	}
 }
 body.advertisers { // PerfectPixel: 120 / 0
-	section {
-		ul {
-			margin-left: 5px;
-			list-style:none;
-			padding-left: 0px;
-			width: 350px;
-			li {
-				margin-top: 10px;
-				font-size: 17px;
-				padding-left: 40px;
-				background: url("../images/img-bullet.png") no-repeat 10px 5px;
-				line-height: 30px;
-			}
-		}
-	}
-	.font-big {
-		width: 400px;
-	}
-	.content-wrapper {
-		width: 350px;
-	}
 	section.main-content {
-		h2 {
-			margin-top: 170px;
-		}
-		.img-wrapper {
-			margin-top: 85px;
-		}
 		button {
 			margin-top: 20px;
 			padding: 20px 110px 20px 110px;
-		}
-	}
-	section.step-1 {
-		.section-bar {
-			margin-top: 125px;
-		}
-		.content-wrapper {
-			margin-top: 130px;
-			margin-left: 30px;
-		}
-		.img-wrapper {
-			margin-top: 50px;
-			margin-left: 10px;
-		}
-	}
-	section.step-2 {
-		.img-wrapper {
-			margin-top: 100px;
-			margin-left: 90px;
-		}
-		.content-wrapper {
-			margin-top: 140px;
-			margin-left: 45px;
-		}
-	}
-	section.step-3 {
-		.content-wrapper {
-			margin-top: 105px;
-			margin-left: 90px;
-		}
-		.img-wrapper {
-			margin-top: 85px;
-			margin-left: -100px;
-		}
-	}
-	section.step-4 {
-		.img-wrapper {
-			margin-top: 180px;
-			margin-left: 80px;
-		}
-		.content-wrapper {
-			margin-top: 185px;
-			margin-left: 60px;
-		}
-	}
-	section.step-5 {
-		.content-wrapper {
-			margin-top: 165px;
-			margin-left: 105px;
-		}
-		.img-wrapper {
-			margin-top: 120px;
-			margin-left: 25px;
 		}
 	}
 	section.last {
@@ -1205,6 +1228,7 @@ body.sign-up-now {
 		}// !section.header
 
 		section.tab-container {
+			padding: 0;
 			.disable {
 				// TODO:
 				opacity: 0.5;

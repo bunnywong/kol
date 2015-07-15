@@ -6265,6 +6265,12 @@ input:focus::-webkit-input-placeholder {
 input:focus::-moz-placeholder {
   color: transparent!important;
 }
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
 /* =Common dom
 -------------------------------------------------- */
 a {
@@ -6304,6 +6310,7 @@ body {
   font-family: "Baskerville";
   font-style: normal;
   border: 12px solid #171717;
+  border-top: 0px;
 }
 body .browsehappy {
   margin: 0.2em 0;
@@ -6315,12 +6322,10 @@ body nav.stick {
   background-color: #171717;
   color: #fcf9f5;
   font-size: 14px;
-  padding-bottom: 10px;
   border: 0px;
 }
 body nav.stick .navbar-brand {
   font-size: 25px;
-  top: 5px;
   left: 0px;
   position: absolute;
 }
@@ -6330,7 +6335,7 @@ body nav.stick .navbar-brand:hover {
 }
 body nav.stick ul.nav {
   float: none;
-  width: 500px;
+  width: 343px;
 }
 body nav.stick ul.nav li {
   margin: 0px 10px;
@@ -6392,8 +6397,34 @@ body footer a .social.blogger {
   background-position-x: 32px;
   background: url("../images/split-social-media.png") no-repeat -317px 0px;
 }
+.container-fluid section {
+  margin-top: 50px;
+  max-width: 1060px;
+  padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.container-fluid section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* =Header
 -------------------------------------------------- */
+.navbar {
+  border-radius: 0px;
+}
+.navbar-header {
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .navbar-nav {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 .mob-nav-toggle-button {
   position: absolute;
   top: -40px;
@@ -6440,6 +6471,25 @@ body footer a .social.blogger {
   transform: translateY(-10px) rotate(-45deg);
   top: 10px;
 }
+.mob-nav-toggle-button.default {
+  top: 0px;
+  right: 0px;
+}
+.mob-nav-toggle-button.default span,
+.mob-nav-toggle-button.default span:before,
+.mob-nav-toggle-button.default span:after {
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .mob-nav-toggle-button.default span,
+  .mob-nav-toggle-button.default span:before,
+  .mob-nav-toggle-button.default span:after {
+    display: none;
+  }
+}
+.mob-nav-toggle-button.default.active span {
+  background-color: transparent;
+}
 /* =Index
 	 PerfectPixel: 25 / -10
 -------------------------------------------------- */
@@ -6475,7 +6525,7 @@ body.home .container-fluid .section-bar.header {
 body.home .container-fluid ul.nav.home {
   margin-top: 15px;
   font-size: 14px;
-  max-width: 530px;
+  max-width: 362px;
   overflow: hidden;
 }
 body.home .container-fluid ul.nav.home li {
@@ -6616,7 +6666,7 @@ body.home .container-fluid section.content div.img-wrapper {
 }
 body.home .container-fluid section.content div.content-wrapper {
   position: absolute;
-  max-width: 500px;
+  max-width: 440px;
 }
 @media (max-width: 850px) {
   body.home .container-fluid section.content div.content-wrapper {
@@ -6706,16 +6756,6 @@ body.home .container-fluid section.content.advertisers button.left {
     left: 0px;
   }
 }
-body.home .select-my-role,
-body.home .key-opinion-leaders,
-body.home section.content.advertisers {
-  margin-top: 50px;
-  padding: 0 25px;
-  max-width: 1060px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
 @media (max-width: 850px) {
   body.home .select-my-role,
   body.home .key-opinion-leaders,
@@ -6727,29 +6767,19 @@ body.home section.content.advertisers {
 /* =KOL & Advertiser
  		PerfectPixel: 25 / 0
 -------------------------------------------------- */
-body.tutorial {
-  border-top: 0px;
-}
-body.tutorial.kol {
-  background-image: url("../images/background-kol.jpg");
-  background-position: center -60px;
-}
-body.tutorial.kol section.last {
-  margin-bottom: 65px;
-}
-body.tutorial.advertisers {
-  background-image: url("../images/background-advertiser.jpg");
-  background-position: center -40px;
-}
-body.tutorial.advertisers section.last {
-  margin-bottom: 65px;
-}
 body.tutorial button {
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   padding: 10px 30px 15px 30px;
 }
 body.tutorial h2 {
   font-size: 54px;
+}
+body.tutorial .img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+body.tutorial section.main-content {
+  text-align: center;
   margin-top: 110px;
 }
 body.tutorial section.main-content .text-bar {
@@ -6758,35 +6788,34 @@ body.tutorial section.main-content .text-bar {
   border-bottom: 1px solid #cccccc;
   margin-top: 30px;
 }
-body.tutorial section.main-content div.content {
+body.tutorial section.main-content .content {
+  max-width: 400px;
+  margin: auto;
   font-size: 15px;
   line-height: 25px;
 }
-body.tutorial section.main-content div.content.first {
+body.tutorial section.main-content .content.first {
   margin-top: 30px;
 }
-body.tutorial section.main-content .img-wrapper {
-  margin-top: 155px;
+body.tutorial section.main-content a:hover {
+  text-decoration: none;
 }
-body.tutorial section.step .section-bar {
+body.tutorial section.how-it-works .section-bar {
   margin-top: 130px;
-  width: 1070px;
   height: 1px;
   border-bottom: 3px solid #d3a849;
 }
-body.tutorial section.step h2 {
+body.tutorial section.how-it-works h2 {
   max-width: 300px;
   margin-left: 35px;
   margin-top: 65px;
 }
-body.tutorial section.step .img-wrapper {
-  margin-top: -50px;
-  position: relative;
+body.tutorial section.step {
+  margin-top: 30px;
 }
 body.tutorial section.step .content-wrapper {
-  margin-top: 120px;
-  margin-left: 55px;
-  width: 290px;
+  width: 35%;
+  padding: 20px 0 0 30px;
 }
 body.tutorial section.step .content-wrapper h3 {
   font-size: 38px;
@@ -6807,98 +6836,85 @@ body.tutorial section.step .content-wrapper .content {
   line-height: 28px;
   margin-top: 10px;
 }
-body.tutorial section.step-2 .content-wrapper {
-  margin-left: 10px;
-  margin-top: 210px;
-  width: 230px;
-}
-body.tutorial section.step-2 .img-wrapper {
-  margin-top: 115px;
-  margin-left: 30px;
+body.tutorial section.step .img-wrapper {
+  margin-top: -50px;
   position: relative;
+  height: 400px;
+  padding: 45px 0;
+  width: 65%;
 }
-body.tutorial section.step-3 .content-wrapper {
-  margin-top: 260px;
-  margin-left: 70px;
+body.tutorial section.step .img-wrapper div {
+  height: 100%;
 }
-body.tutorial section.step-3 .img-wrapper {
-  margin-top: 105px;
-  margin-left: 50px;
+body.tutorial.kol {
+  background-image: url("../images/background-kol.jpg");
+  background-position: center -60px;
 }
-body.tutorial button.last {
-  margin-top: 80px;
+body.tutorial.kol section.kol .left,
+body.tutorial.kol section.kol .right {
+  max-width: 500px;
+  width: 50%;
 }
-body.advertisers section ul {
+body.tutorial.kol section.kol .image-speaker {
+  height: 400px;
+  padding: 45px 0;
+}
+body.tutorial.kol section.kol .image-speaker .img-wrapper {
+  background-image: url('../images/kol-banner-main.png');
+}
+body.tutorial.kol section.step-1 {
+  margin-top: -30px;
+}
+body.tutorial.kol section.step-2 .content-wrapper {
+  text-align: right;
+}
+body.tutorial.kol section.last {
+  margin-bottom: 65px;
+}
+body.tutorial.advertisers {
+  background-image: url("../images/background-advertiser.jpg");
+  background-position: center -40px;
+}
+body.tutorial.advertisers section ul {
   margin-left: 5px;
   list-style: none;
   padding-left: 0px;
-  width: 350px;
 }
-body.advertisers section ul li {
+body.tutorial.advertisers section ul li {
   margin-top: 10px;
   font-size: 17px;
   padding-left: 40px;
   background: url("../images/img-bullet.png") no-repeat 10px 5px;
   line-height: 30px;
 }
-body.advertisers .font-big {
-  width: 400px;
+body.tutorial.advertisers section.advertisers .left,
+body.tutorial.advertisers section.advertisers .right {
+  max-width: 500px;
+  width: 50%;
 }
-body.advertisers .content-wrapper {
-  width: 350px;
+body.tutorial.advertisers section.advertisers .image-pannel {
+  height: 400px;
+  margin-top: -50px;
 }
-body.advertisers section.main-content h2 {
-  margin-top: 170px;
+body.tutorial.advertisers section.advertisers .image-pannel .img-wrapper {
+  background-image: url('../images/advertiser-banner-main.png');
 }
-body.advertisers section.main-content .img-wrapper {
-  margin-top: 85px;
+body.tutorial.advertisers section.how-it-works .section-bar {
+  margin-top: 125px;
+}
+body.tutorial.advertisers section.step .img-wrapper {
+  margin-top: -40px;
+  height: 540px;
+}
+body.tutorial.advertisers section.last {
+  margin-bottom: 65px;
+}
+body.tutorial button.last {
+  margin-top: 50px;
 }
 body.advertisers section.main-content button {
   margin-top: 20px;
   padding: 20px 110px 20px 110px;
-}
-body.advertisers section.step-1 .section-bar {
-  margin-top: 125px;
-}
-body.advertisers section.step-1 .content-wrapper {
-  margin-top: 130px;
-  margin-left: 30px;
-}
-body.advertisers section.step-1 .img-wrapper {
-  margin-top: 50px;
-  margin-left: 10px;
-}
-body.advertisers section.step-2 .img-wrapper {
-  margin-top: 100px;
-  margin-left: 90px;
-}
-body.advertisers section.step-2 .content-wrapper {
-  margin-top: 140px;
-  margin-left: 45px;
-}
-body.advertisers section.step-3 .content-wrapper {
-  margin-top: 105px;
-  margin-left: 90px;
-}
-body.advertisers section.step-3 .img-wrapper {
-  margin-top: 85px;
-  margin-left: -100px;
-}
-body.advertisers section.step-4 .img-wrapper {
-  margin-top: 180px;
-  margin-left: 80px;
-}
-body.advertisers section.step-4 .content-wrapper {
-  margin-top: 185px;
-  margin-left: 60px;
-}
-body.advertisers section.step-5 .content-wrapper {
-  margin-top: 165px;
-  margin-left: 105px;
-}
-body.advertisers section.step-5 .img-wrapper {
-  margin-top: 120px;
-  margin-left: 25px;
 }
 body.advertisers section.last {
   margin-bottom: 90px;
@@ -6954,6 +6970,9 @@ body.sign-up-now .my-container section.header hr.header-bar {
   margin-top: 35px;
   border-bottom: 1px solid #58595b;
   max-width: 89px;
+}
+body.sign-up-now .my-container section.tab-container {
+  padding: 0;
 }
 body.sign-up-now .my-container section.tab-container .disable {
   opacity: 0.5;

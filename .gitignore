@@ -9,7 +9,7 @@
 *.zip
 *.vi
 *~
-
+*.pem
 # OS folders
 .DS_Store
 ._*
