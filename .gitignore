@@ -10,6 +10,7 @@
 *.vi
 *~
 *.pem
+*.sh
 # OS folders
 .DS_Store
 ._*
