@@ -43,89 +43,60 @@ app.post('/profile', function(req, res) {
   console.log(body);
 
   var Converter = require('csvtojson').Converter;
-  var fileStream = fs.createReadStream('data.csv');
-  //new converter instance 
-  var converter = new Converter({constructResult:true});
-  //end_parsed will be emitted once parsing finished 
-  converter.on('end_parsed', function (jsonObj) {
-    var writer = csvWriter();
-    writer.pipe(fs.createWriteStream('data.csv'));
+  var file = __dirname + '/data.csv';
+  checkForFile(file, function() {
+    var fileStream = fs.createReadStream('data.csv');
+    var converter = new Converter({constructResult:true});
+    //end_parsed will be emitted once parsing finished 
+    converter.on('end_parsed', function (jsonObj) {
 
-    if (jsonObj.length === 0) {
-      jsonObj.push({ 'first-name': 'sample',
-        'last-name': 'user',
-        age: '99',
-        gender: 'Male',
-        country: 'Afghanistan',
-        city: 'Balkh',
-        neighborhood: 'sdf',
-        profession: 'sdf',
-        'household-income': '500K+',
-        'facebook-checkbox': 'on',
-        'twitter-checkbox': 'on',
-        'pinterest-checkbox': 'on',
-        'instagram-checkbox': 'on',
-        'youtube-checkbox': 'on',
-        'wechat-checkbox': 'on',
-        'weibo-checkbox': 'on',
-        pinterest: '1000-2000',
-        instagram: '2000-3000',
-        wechat: '2000-3000',
-        facebook: '2000-3000',
-        twitter: '2000-3000',
-        youtube: '2000-3000',
-        weibo: '2000-3000',
-        brands: 'sample',
-        venues: 'sample',
-        activities: 'sample',
-        email: 'sdf@sdfljc.c',
-        timeSubmitted: 'Sat Jul 18 2015 03:43:00 GMT+0800 (HKT)'
-      });
-    }
+      var writer = csvWriter();
+      writer.pipe(fs.createWriteStream('data.csv'));
+      console.log(jsonObj, body);
+      jsonObj.push(body);
+      // fs.writeFileSync('data.xlsx', xls, 'binary');
+      for (var i = 0; i < jsonObj.length; i ++) {
+        writer.write(jsonObj[i]);
+      }
+      writer.end();
 
-    jsonObj.push(body);
-    // fs.writeFileSync('data.xlsx', xls, 'binary');
-    for (var i = 0; i < jsonObj.length; i ++) {
-      writer.write(jsonObj[i]);
-    }
-    writer.end();
-
-    // res.sendFile(__dirname + '/app/sign-up-now-finish.html');
-    // res.redirect('/sign-up-now-finish.html');
-    res.send({redirect: '/sign-up-now-finish.html'});
+      // res.sendFile(__dirname + '/app/sign-up-now-finish.html');
+      // res.redirect('/sign-up-now-finish.html');
+      res.send({redirect: '/sign-up-now-finish.html'});
+    });
+    //read from file 
+    fileStream.pipe(converter);
+    
   });
-  //read from file 
-  fileStream.pipe(converter);
+  //new converter instance 
 
 });
 
 var path = require('path');
 var mime = require('mime');
+// var firstData =
 
 app.get('/profile', function(req, res) {
   console.log(req.query);
-
-  if (req.query.name === 'Krizia' && req.query.password === 'BKDFJ') {
-    console.log('success');
-    // res.sendFile(__dirname + '/data.csv');
+  if (req.query.authCode === 'BKDFJ') {
 
     var file = __dirname + '/data.csv';
+    checkForFile(file, function() {
+      var filename = path.basename(file);
+      var mimetype = mime.lookup(file);
 
-    var filename = path.basename(file);
-    var mimetype = mime.lookup(file);
+      res.setHeader('Content-disposition', 'attachment; filename=' + filename);
+      res.setHeader('Content-type', mimetype);
 
-    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-    res.setHeader('Content-type', mimetype);
+      var filestream = fs.createReadStream(file);
+      filestream.pipe(res);
+      
+    });
 
-    var filestream = fs.createReadStream(file);
-    filestream.pipe(res);
-    res.redirect('/');
+
   } else {
     res.sendStatus(401);
   }
-
-
-
 });
 
 // Start server
@@ -154,4 +125,54 @@ function convertCity(country, city) {
   return cityName;
 }
 
+
+function checkForFile(fileName, callback) {
+  fs.exists(fileName, function (exists) {
+    if (exists) {
+        callback();
+    } else {
+      fs.writeFile(fileName, '', function (err, data){ 
+        var writer = csvWriter();
+        writer.pipe(fs.createWriteStream('data.csv'));
+        writer.write({
+          'first-name': '',
+          'last-name': '',
+          age: '',
+          gender: '',
+          country: '',
+          city: '',
+          neighborhood: '',
+          profession: '',
+          'household-income': '',
+          'facebook-checkbox': '',
+          'twitter-checkbox': '',
+          'pinterest-checkbox': '',
+          'instagram-checkbox': '',
+          'youtube-checkbox': '',
+          'wechat-checkbox': '',
+          'weibo-checkbox': '',
+          pinterest: '',
+          instagram: '',
+          wechat: '',
+          facebook: '',
+          twitter: '',
+          youtube: '',
+          weibo: '',
+          brands: '',
+          venues: '',
+          activities: '',
+          email: '',
+          timeSubmitted: '',
+        });
+        writer.end();
+
+        callback();
+      });
+    }
+
+  });
+}
+
+var writer = csvWriter();
+    writer.pipe(fs.createWriteStream('data.csv'));
 
