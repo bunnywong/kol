@@ -78,7 +78,7 @@ var mime = require('mime');
 
 app.get('/profile', function(req, res) {
   console.log(req.query);
-  if (req.query.authCode === 'BKDFJ') {
+  if (req.query.authCode === 'BK7je29TZm') {
 
     var file = __dirname + '/data.csv';
     checkForFile(file, function() {
