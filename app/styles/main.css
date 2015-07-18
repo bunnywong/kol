@@ -6427,7 +6427,6 @@ body footer a .social.blogger {
 }
 .mob-nav-toggle-button {
   position: absolute;
-  top: -40px;
   height: 50px;
   width: 50px;
   line-height: 50px;
@@ -7145,5 +7144,14 @@ body.sign-up-now .my-container button.continue.submit {
 body.sign-up-now .my-container button.continue.back-to-home {
   margin-top: 35px;
   margin-bottom: 260px;
+}
+.admin-form {
+  width: 80%;
+  margin: auto;
+  max-width: 450px;
+  padding-bottom: 50px;
+}
+.admin-form span {
+  font-size: 14px;
 }
 /*# sourceMappingURL=/styles/main.css.map */

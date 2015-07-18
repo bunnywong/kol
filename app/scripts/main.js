@@ -62,6 +62,21 @@ $(document).ready(function(){
 		    // handle the invalid form...
 		    // alert('bad')`
 		  } else {
+		  	e.preventDefault();
+
+      	var formData = $(this).serializeArray();
+      	var formObj = {};
+      	for (var i = 0; i < formData.length; i ++) {
+      		formObj[formData[i].name] = formData[i].value;
+      	}
+      	$.post('/profile', formData)
+      	.done(function(data) {
+      		console.log('done');
+      		window.location = data.redirect;
+      	})
+      	.fail(function() {
+      		console.log('fail');
+      	});
 		    // everything looks good!
 		    // alert('good')
 		  }

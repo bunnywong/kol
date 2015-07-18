@@ -89,7 +89,7 @@
             </ul>
 
             <!-- Tab panes -->
-            <form method="get" action="sign-up-now-finish.html" role="form" data-toggle="validator">
+            <form method="post" action="/profile" role="form" data-toggle="validator">
             <div class="tab-content js-tab-content">
                 <div role="tabpanel" class="tab-pane js-step-1 active" id="step-1">
                   <article>
@@ -141,8 +141,8 @@
                         <div class="form-group">
                           <select name="gender" class="selectpicker big js-gender" data-error"Please input gender" required>
                             <option value=""> </option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                           </select>
                           <div class="help-block with-errors"></div>
                         </div>
@@ -162,7 +162,7 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="input-wrapper-inner">
-                            <div id="countries-states" class="bfh-selectbox bfh-countries js-countries" data-country="">
+                            <div id="countries-states" class="bfh-selectbox bfh-countries js-countries" data-country="" data-flags="true">
                               <input type="hidden" name="country" value="" data-error="Please select country">
 
                               <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
@@ -234,32 +234,32 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-1" value="option1" name="household-income" checked>
+                            <input type="radio" id="income-radio-1" value="10-20k" name="household-income" checked>
                             <label for="income-radio-1"><em>10-20K</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-2" value="option2" name="household-income">
+                            <input type="radio" id="income-radio-2" value="20-50K" name="household-income">
                             <label for="income-radio-2"><em>20-50K</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-3" value="option2" name="household-income">
+                            <input type="radio" id="income-radio-3" value="50-100K" name="household-income">
                             <label for="income-radio-3"><em>50-100K</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-4" value="option2" name="household-income">
+                            <input type="radio" id="income-radio-4" value="100-200K" name="household-income">
                             <label for="income-radio-4"><em>100-200K</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-5" value="option2" name="household-income">
+                            <input type="radio" id="income-radio-5" value="200-500K" name="household-income">
                             <label for="income-radio-5"><em>200-500K</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="income-radio-6" value="option2" name="household-income">
+                            <input type="radio" id="income-radio-6" value="500K+" name="household-income">
                             <label for="income-radio-6"><em>500K+</em></label>
                           </div>
                         </div>
@@ -346,27 +346,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="facebook-radio-1" value="option1" name="facebook">
+                            <input type="radio" id="facebook-radio-1" value="100-500" name="facebook">
                             <label for="facebook-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="facebook-radio-2" value="option2" name="facebook">
+                            <input type="radio" id="facebook-radio-2" value="500-1000" name="facebook">
                             <label for="facebook-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="facebook-radio-3" value="option2" name="facebook">
+                            <input type="radio" id="facebook-radio-3" value="1000-2000" name="facebook">
                             <label for="facebook-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="facebook-radio-4" value="option2" name="facebook">
+                            <input type="radio" id="facebook-radio-4" value="2000-3000" name="facebook">
                             <label for="facebook-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="facebook-radio-5" value="option2" name="facebook">
+                            <input type="radio" id="facebook-radio-5" value="3000 +" name="facebook">
                             <label for="facebook-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -384,27 +384,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="twitter-radio-1" value="option1" name="twitter">
+                            <input type="radio" id="twitter-radio-1" value="100-500" name="twitter">
                             <label for="twitter-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="twitter-radio-2" value="option2" name="twitter">
+                            <input type="radio" id="twitter-radio-2" value="500-1000" name="twitter">
                             <label for="twitter-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="twitter-radio-3" value="option2" name="twitter">
+                            <input type="radio" id="twitter-radio-3" value="1000-2000" name="twitter">
                             <label for="twitter-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="twitter-radio-4" value="option2" name="twitter">
+                            <input type="radio" id="twitter-radio-4" value="2000-3000" name="twitter">
                             <label for="twitter-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="twitter-radio-5" value="option2" name="twitter">
+                            <input type="radio" id="twitter-radio-5" value="3000 +" name="twitter">
                             <label for="twitter-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -422,27 +422,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="pinterest-radio-1" value="option1" name="pinterest">
+                            <input type="radio" id="pinterest-radio-1" value="100-500" name="pinterest">
                             <label for="pinterest-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="pinterest-radio-2" value="option2" name="pinterest">
+                            <input type="radio" id="pinterest-radio-2" value="500-1000" name="pinterest">
                             <label for="pinterest-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="pinterest-radio-3" value="option2" name="pinterest">
+                            <input type="radio" id="pinterest-radio-3" value="1000-2000" name="pinterest">
                             <label for="pinterest-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="pinterest-radio-4" value="option2" name="pinterest">
+                            <input type="radio" id="pinterest-radio-4" value="2000-3000" name="pinterest">
                             <label for="pinterest-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="pinterest-radio-5" value="option2" name="pinterest">
+                            <input type="radio" id="pinterest-radio-5" value="3000 +" name="pinterest">
                             <label for="pinterest-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -460,27 +460,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="instagram-radio-1" value="option1" name="instagram">
+                            <input type="radio" id="instagram-radio-1" value="100-500" name="instagram">
                             <label for="instagram-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="instagram-radio-2" value="option2" name="instagram">
+                            <input type="radio" id="instagram-radio-2" value="500-1000" name="instagram">
                             <label for="instagram-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="instagram-radio-3" value="option2" name="instagram">
+                            <input type="radio" id="instagram-radio-3" value="1000-2000" name="instagram">
                             <label for="instagram-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="instagram-radio-4" value="option2" name="instagram">
+                            <input type="radio" id="instagram-radio-4" value="2000-3000" name="instagram">
                             <label for="instagram-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="instagram-radio-5" value="option2" name="instagram">
+                            <input type="radio" id="instagram-radio-5" value="3000 +" name="instagram">
                             <label for="instagram-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -498,27 +498,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="youtube-radio-1" value="option1" name="youtube">
+                            <input type="radio" id="youtube-radio-1" value="100-500" name="youtube">
                             <label for="youtube-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="youtube-radio-2" value="option2" name="youtube">
+                            <input type="radio" id="youtube-radio-2" value="500-1000" name="youtube">
                             <label for="youtube-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="youtube-radio-3" value="option2" name="youtube">
+                            <input type="radio" id="youtube-radio-3" value="1000-2000" name="youtube">
                             <label for="youtube-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="youtube-radio-4" value="option2" name="youtube">
+                            <input type="radio" id="youtube-radio-4" value="2000-3000" name="youtube">
                             <label for="youtube-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="youtube-radio-5" value="option2" name="youtube">
+                            <input type="radio" id="youtube-radio-5" value="3000 +" name="youtube">
                             <label for="youtube-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -536,27 +536,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="wechat-radio-1" value="option1" name="wechat">
+                            <input type="radio" id="wechat-radio-1" value="100-500" name="wechat">
                             <label for="wechat-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="wechat-radio-2" value="option2" name="wechat">
+                            <input type="radio" id="wechat-radio-2" value="500-1000" name="wechat">
                             <label for="wechat-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="wechat-radio-3" value="option2" name="wechat">
+                            <input type="radio" id="wechat-radio-3" value="1000-2000" name="wechat">
                             <label for="wechat-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="wechat-radio-4" value="option2" name="wechat">
+                            <input type="radio" id="wechat-radio-4" value="2000-3000" name="wechat">
                             <label for="wechat-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="wechat-radio-5" value="option2" name="wechat">
+                            <input type="radio" id="wechat-radio-5" value="3000 +" name="wechat">
                             <label for="wechat-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -574,27 +574,27 @@
                       <div class="col-lg-12">
                         <div class="input-wrapper">
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="weibo-radio-1" value="option1" name="weibo">
+                            <input type="radio" id="weibo-radio-1" value="100-500" name="weibo">
                             <label for="weibo-radio-1"><em>100-500</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="weibo-radio-2" value="option2" name="weibo">
+                            <input type="radio" id="weibo-radio-2" value="500-1000" name="weibo">
                             <label for="weibo-radio-2"><em>500-1000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="weibo-radio-3" value="option2" name="weibo">
+                            <input type="radio" id="weibo-radio-3" value="1000-2000" name="weibo">
                             <label for="weibo-radio-3"><em>1000-2000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="weibo-radio-4" value="option2" name="weibo">
+                            <input type="radio" id="weibo-radio-4" value="2000-3000" name="weibo">
                             <label for="weibo-radio-4"><em>2000-3000</em></label>
                           </div>
 
                           <div class="radio radio-info radio-inline">
-                            <input type="radio" id="weibo-radio-5" value="option2" name="weibo">
+                            <input type="radio" id="weibo-radio-5" value="3000 +" name="weibo">
                             <label for="weibo-radio-5"><em>3000 +</em></label>
                           </div>
                         </div>
@@ -613,7 +613,8 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="input-wrapper form-group">
-                          <input type="text" value="J. Crew,Aldo,Apple" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input your favorite brands" required>
+                          <input name="brands" type="text" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input your favorite brands" required >
+
                           <div class="help-block with-errors"></div>
                           <button type="button" class="apply absolute">Apply</button>
                         </div>
@@ -632,7 +633,7 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="input-wrapper form-group">
-                          <input type="text" value="Lane Crawford,SaSa,Ikea" data-role="tagsinput" class="hashtag" autocomplete="off" data-error="Please input brands name" required>
+                          <input type="text" name="venues" data-role="tagsinput" class="hashtag" autocomplete="off" data-error="Please input brands name" required>
                           <div class="help-block with-errors"></div>
                           <button type="button" class="apply absolute">Apply</button>
                         </div>
@@ -651,7 +652,7 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="input-wrapper form-group">
-                         <input type="text" value="Shopping,Hiking,Painting" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input activities or hobbies." required>
+                         <input type="text" name="activities" data-role="tagsinput" class="hashtag"  autocomplete="off" data-error="Please input activities or hobbies." required>
                          <div class="help-block with-errors"></div>
                          <button type="button" class="apply absolute">Apply</button>
                         </div>
@@ -662,7 +663,7 @@
                   <article>
                     <div class="row">
                       <div class="col-lg-12">
-                        <span class="number font-brown"><strong>4 </strong></span>
+                        <span class="number font-brown"><strong>5 </strong></span>
                         <span class="img img-question-stick"></span>
                         <span class="question"><em>Do you have any skills or abilities potentially useful for brands & advertisers?</em></span>
                       </div>
