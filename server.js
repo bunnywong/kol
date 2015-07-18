@@ -102,7 +102,7 @@ app.get('/profile', function(req, res) {
 
 });
 var file = __dirname + '/data.csv';
-checkForFile(file);
+checkForFile(file, function(){ console.log('created file'); });
 
 // Start server
 server.listen(9000, function () {
