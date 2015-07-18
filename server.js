@@ -97,7 +97,12 @@ app.get('/profile', function(req, res) {
   } else {
     res.sendStatus(401);
   }
+
+
+
 });
+var file = __dirname + '/data.csv';
+checkForFile(file);
 
 // Start server
 server.listen(9000, function () {
