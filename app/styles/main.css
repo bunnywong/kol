@@ -10,6 +10,37 @@ button:visited {
   outline: none!important;
   border: none!important;
 }
+@media (max-width: 850px) {
+  .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+  }
+}
+@media (max-width: 850px) {
+  .bootstrap-select.big button {
+    width: 100% !important;
+  }
+}
+.bfh-selectbox .bfh-selectbox-toggle .selectbox-caret,
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0px;
+  margin-top: 10px;
+}
+@media (max-width: 850px) {
+  .bfh-selectbox .bfh-selectbox-toggle .selectbox-caret,
+  .bootstrap-select.btn-group .dropdown-toggle .caret {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 850px) {
+  .bfh-selectbox .bfh-selectbox-toggle .selectbox-caret {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}
 /*
  - Ref -
  	http://staging.keystoneprep.com/service
@@ -5958,6 +5989,11 @@ body {
     display: none;
   }
 }
+@media (max-width: 850px) {
+  .form-group {
+    width: 100%;
+  }
+}
 .background-cover-image {
   background-position: center center;
   background-repeat: no-repeat;
@@ -6011,8 +6047,8 @@ body {
   width: 35px;
   border: none;
   border-left: 1px solid #cccccc;
-  top: 0px!important;
-  right: 0px!important;
+  top: 0;
+  right: 0;
   background-position: cover;
 }
 .dropup .caret,
@@ -6055,7 +6091,12 @@ body {
 }
 .bootstrap-select {
   margin-top: 10px;
-  width: auto!important;
+  width: 100%;
+}
+@media (min-width: 851px) {
+  .bootstrap-select {
+    width: auto!important;
+  }
 }
 .bootstrap-select .open button.dropdown-toggle.btn-default,
 .bootstrap-select .bootstrap-select .dropdown-toggle:focus {
@@ -6101,22 +6142,27 @@ body {
   display: none;
 }
 .bootstrap-select.big button {
-  width: 480px;
+  width: 400px;
 }
 .bootstrap-select.big li > a {
-  width: 480px;
+  width: 400px;
+}
+@media (max-width: 850px) {
+  .bootstrap-select.big li > a {
+    width: 100%;
+  }
 }
 .bootstrap-select.middle button {
-  width: 323px;
+  width: 270px;
 }
 .bootstrap-select.middle li > a {
-  width: 323px;
+  width: 270px;
 }
 .bootstrap-select.small button {
-  width: 300px;
+  width: 250px;
 }
 .bootstrap-select.small li > a {
-  width: 300px;
+  width: 250px;
 }
 .bfh-selectbox.open > a {
   border: 1px solid #b8984b;
@@ -6127,8 +6173,13 @@ body {
   margin-top: 10px;
   border: 1px solid #171717;
   height: 70px;
-  width: 300px;
+  width: 250px;
   border-radius: 0px;
+}
+@media (max-width: 850px) {
+  .bfh-selectbox > a {
+    width: 100%;
+  }
 }
 .bfh-selectbox > a:hover {
   color: #cccccc;
@@ -6143,12 +6194,16 @@ body {
   /*border: 1px solid white;*/
 }
 .bfh-selectbox > a .selectbox-caret {
-  margin-top: -36px !important;
-  margin-right: -24px !important;
-  margin-left: 0px!important;
+  /*margin-top: -36px!important;
+			margin-right: -24px!important;
+			margin-left: 0px!important;
+			.responsive-mobile ({
+				margin-top: -6px!important;
+
+			});*/
 }
 .bfh-selectbox .bfh-selectbox-options .listbox ul {
-  min-width: 300px !important;
+  min-width: 250px !important;
 }
 .radio label::before {
   height: 25px!important;
@@ -6216,6 +6271,11 @@ body {
   color: #eb393a !important;
   font-style: italic;
   font-size: 18px;
+}
+@media (max-width: 850px) {
+  .with-errors {
+    margin-top: 1px;
+  }
 }
 ::-webkit-input-placeholder {
   color: #cccccc !important;
@@ -6710,9 +6770,13 @@ body.home .container-fluid section.content div.content-wrapper ul.list li:not(.l
 }
 body.home .container-fluid section.content div.content-wrapper button {
   padding: 10px;
-  min-width: 220px;
   min-height: 60px;
   position: relative;
+}
+@media (min-width: 851px) {
+  body.home .container-fluid section.content div.content-wrapper button {
+    min-width: 220px;
+  }
 }
 body.home .container-fluid section.content div.content-wrapper button.right {
   margin-top: 40px;
@@ -6935,7 +6999,7 @@ body.sign-up-now .my-container {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1025px;
+  max-width: 875px;
 }
 body.sign-up-now .my-container:before,
 body.sign-up-now .my-container:after {
@@ -6961,6 +7025,11 @@ body.sign-up-now .my-container section.header h1 {
   font-size: 110px;
   margin-top: 80px;
 }
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.header h1 {
+    font-size: 60px;
+  }
+}
 body.sign-up-now .my-container section.header .sub-title {
   font-size: 16px;
   margin-top: -10px;
@@ -6979,9 +7048,13 @@ body.sign-up-now .my-container section.tab-container .disable {
 }
 body.sign-up-now .my-container section.tab-container ul.nav-tabs {
   border: none;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 }
 body.sign-up-now .my-container section.tab-container ul.nav-tabs li {
-  float: none;
+  width: 33%;
+  float: left;
   display: inline-block;
   background-color: transparent;
 }
@@ -6995,7 +7068,6 @@ body.sign-up-now .my-container section.tab-container ul.nav-tabs li:hover a {
 }
 body.sign-up-now .my-container section.tab-container ul.nav-tabs li a {
   padding: 0px;
-  width: 190px;
 }
 body.sign-up-now .my-container section.tab-container ul.nav-tabs li a .ball {
   margin-top: 15px;
@@ -7020,6 +7092,11 @@ body.sign-up-now .my-container section.tab-container ul.nav-tabs li a .ball .ste
   right: 120px;
   width: 145px;
   z-index: -1;
+}
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container ul.nav-tabs li a .ball .step-bar {
+    display: none;
+  }
 }
 body.sign-up-now .my-container section.tab-container ul.nav-tabs li a .title {
   font-size: 16px;
@@ -7053,14 +7130,44 @@ body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane a
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper {
   font-size: 18px;
 }
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *.radio {
+    padding-left: 30px;
+  }
+}
+@media (min-width: 851px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:first-child {
+    margin-left: 25px;
+  }
+}
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:not(:first-child) {
   margin-left: 25px;
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:not(:first-child).radio {
   margin-left: 35px;
 }
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:not(:first-child).radio {
+    margin-left: 0px;
+    width: auto;
+  }
+}
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:not(:first-child) {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper .input-wrapper-inner {
   display: inline-block;
+}
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper .input-wrapper-inner {
+    width: 100%;
+  }
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper .input-wrapper-inner:not(:first-child) {
+    margin-top: 20px;
+  }
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input {
   text-indent: 30px;
@@ -7071,12 +7178,22 @@ body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane a
   margin-left: 25px;
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input.small {
-  width: 323px;
+  width: 270px;
   top: 5px;
   position: relative;
 }
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input.small {
+    width: 100%;
+  }
+}
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input.big {
-  width: 480px;
+  width: 400px;
+}
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input.big {
+    width: 100%;
+  }
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article input.full {
   width: 100%;
@@ -7144,6 +7261,11 @@ body.sign-up-now .my-container button.continue.submit {
 body.sign-up-now .my-container button.continue.back-to-home {
   margin-top: 35px;
   margin-bottom: 260px;
+}
+@media (max-width: 850px) {
+  #step-2.tab-pane article .input-wrapper > *:not(:first-child) {
+    width: auto !important;
+  }
 }
 .admin-form {
   width: 80%;
