@@ -6066,6 +6066,7 @@ body {
   height: 12px;
   width: 12px;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 .img-question-stick {
   background-image: url("../images/img-question-stick.png");
@@ -6238,30 +6239,45 @@ body {
 }
 .bootstrap-tagsinput {
   margin-top: 10px;
-  height: 70px;
-  width: 100%;
+  min-height: 70px;
+  min-width: 100%;
+  /*padding-right: 150px;*/
 }
-.bootstrap-tagsinput span {
+.bootstrap-tagsinput > span {
+  float: left;
   color: #878787 !important;
   background-color: #efefef;
+  display: inline-block !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  line-height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.bootstrap-tagsinput span.tag {
-  padding: 15px 30px;
-  top: -15px;
-  position: relative;
+.bootstrap-tagsinput > span.tag {
+  margin-right: 5px;
+  /*padding: 15px 30px;*/
+  /*top: -15px;	*/
+  /*position: relative;*/
 }
-.bootstrap-tagsinput span.tag > span {
+.bootstrap-tagsinput > span.tag > span {
   background-image: url("../images/img-hashtag-cross.png");
   height: 12px;
   width: 12px;
   background-repeat: no-repeat;
+  background-position: center center;
   display: inline-block;
   font-style: normal;
   padding: 0px;
-  left: 10px;
-  position: relative;
+  height: 25px;
+  line-height: 25px;
+  /*height: 52px;*/
+  /*line-height: 52px;*/
+  /*left: 10px;*/
+  /*position: relative;*/
 }
-.bootstrap-tagsinput span.tag > span:after {
+.bootstrap-tagsinput > span.tag > span:after {
   content: "" !important;
 }
 .with-errors {
@@ -7135,11 +7151,6 @@ body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane a
     padding-left: 30px;
   }
 }
-@media (min-width: 851px) {
-  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:first-child {
-    margin-left: 25px;
-  }
-}
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .input-wrapper > *:not(:first-child) {
   margin-left: 25px;
 }
@@ -7224,9 +7235,14 @@ body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane a
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .bootstrap-tagsinput ~ button.apply {
   padding: 25px 55px 20px 55px;
   top: 10px;
-  right: 15px;
+  right: -10px;
   background-color: #b8984b;
   border: none;
+}
+@media (max-width: 850px) {
+  body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .bootstrap-tagsinput ~ button.apply {
+    right: 15px;
+  }
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .bootstrap-tagsinput ~ button.apply:hover {
   background-color: #997b39;
@@ -7235,7 +7251,9 @@ body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane a
   background-color: #7c612a;
 }
 body.sign-up-now .my-container section.tab-container div.tab-content .tab-pane article .bootstrap-tagsinput input {
-  top: -10px;
+  height: auto;
+  min-height: 40px;
+  /*top: -14px;*/
   position: relative;
   text-indent: 0px;
 }
@@ -7265,6 +7283,11 @@ body.sign-up-now .my-container button.continue.back-to-home {
 @media (max-width: 850px) {
   #step-2.tab-pane article .input-wrapper > *:not(:first-child) {
     width: auto !important;
+  }
+}
+@media (min-width: 851px) {
+  #step-2.tab-pane article .input-wrapper > *:first-child {
+    margin-left: 25px;
   }
 }
 .admin-form {
